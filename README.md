@@ -52,7 +52,7 @@
 
 
 **Project Report Collaboration Insights**
-URL del repositorio de GitHub de la organización: [[https://github.com/Cibersofa](https://github.com/UPC-PRE-SI729-2402-WX51-G3-Cibersofa](https://github.com/upc-pre-202502-2520-6339-cibersofa)
+URL del repositorio de GitHub de la organización: [[https://github.com/Cibersofa]([https://github.com/UPC-PRE-SI729-2402-WX51-G3-Cibersofa](https://github.com/upc-pre-202502-2520-6339-cibersofa](https://github.com/upc-pre-202502-2520-6339-automatch))
 
 Avance 1
 
@@ -104,34 +104,35 @@ Para el desarrollo del Avance 1, se optó por dividir el trabajo de la siguiente
 - [3.4. Alcance](#34-alcance)
 - [3.5. Product Backlog](#35-product-backlog)
 
-### [Chapter IV: Product Design](#chapter-iv-product-design)
-- [4.1. Style Guidelines](#41-style-guidelines)
-  - [4.1.1. General Style Guidelines](#411-general-style-guidelines)
-  - [4.1.2. Web Style Guidelines](#412-web-style-guidelines)
-- [4.2. Information Architecture](#42-information-architecture)
-  - [4.2.1. Organization Systems](#421-organization-systems)
-  - [4.2.2. Labeling Systems](#422-labeling-systems)
-  - [4.2.3. SEO Tags and Meta Tags](#423-seo-tags-and-meta-tags)
-  - [4.2.4. Searching Systems](#424-searching-systems)
-  - [4.2.5. Navigation Systems](#425-navigation-systems)
-- [4.3. Landing Page UI Design](#43-landing-page-ui-design)
-  - [4.3.1. Landing Page Wireframe](#431-landing-page-wireframe)
-  - [4.3.2. Landing Page Mock-up](#432-landing-page-mock-up)
-- [4.4. Web Applications UX/UI Design](#44-web-applications-uxui-design)
-  - [4.4.1. Web Applications Wireframes](#441-web-applications-wireframes)
-  - [4.4.2. Web Applications Wireflow Diagrams](#442-web-applications-wireflow-diagrams)
-  - [4.4.3. Web Applications Mock-ups](#443-web-applications-mock-ups)
-  - [4.4.4. Web Applications User Flow Diagrams](#444-web-applications-user-flow-diagrams)
-- [4.5. Web Applications Prototyping](#45-web-applications-prototyping)
-- [4.6. Domain-Driven Software Architecture](#46-domain-driven-software-architecture)
-  - [4.6.1. Software Architecture Context Diagram](#461-software-architecture-context-diagram)
-  - [4.6.2. Software Architecture Container Diagrams](#462-software-architecture-container-diagrams)
-  - [4.6.3. Software Architecture Components Diagrams](#463-software-architecture-components-diagrams)
-- [4.7. Software Object-Oriented Design](#47-software-object-oriented-design)
-  - [4.7.1. Class Diagrams](#471-class-diagrams)
-  - [4.7.2. Class Dictionary](#472-class-dictionary)
-- [4.8. Database Design](#48-database-design)
-  - [4.8.1. Database Diagram](#481-database-diagram)
+### [Chapter IV: Product Architecture Design](#chapter-iv-product-architecture-design)
+- [4.1. Design Concepts, ViewPoints & ER Diagrams](#41-design-concepts-viewpoints-&-er-diagrams)
+  - [4.1.1. Principles Statements](#411-principles-statements)
+  - [4.1.2. Approaches Statements Architectural Styles & Patterns](#412-approaches-statements-architecture-styles-&-patterns)
+  - [4.1.3. Context Diagram](#412-context-diagram)
+  - [4.1.4. Approach driven ViewPoints Diagrams](#412-approach-driven-viewpoints-diagrams)
+  - [4.1.5. Relational / Non Relational Database Diagram](#412-relational-non-relational-database-diagram)
+  - [4.1.6. Design Patterns](#412-design-patterns)
+  - [4.1.7. Tactics](#412-tactics)
+
+- [4.2. Architectural Drivers](#42-architectural-drivers)
+  - [4.2.1. Design Purpose](#421-design-purpose)
+  - [4.2.2. Primary Functionality](#422-primary-functionality)
+  - [4.2.3. Quality Attribute Scenarios](#423-quality-attribute-scenarios)
+  - [4.2.4. Constraints](#424-constraints)
+  - [4.2.5. Architectural Concerns](#425-architectural-concerns)
+- [4.3. AAD Iterations](#43-aad-iterations)
+  - [4.2.1. Iteration 1: <Definición de Microservicios Base>](#431-iteration-1-definicion-de-microservicios-base)
+  - [4.2.2. Iteration 2: <Gestión de Vehículos y Certificación>](#431-iteration-2-gestion-de-vehiculos-y-certificacion)
+  - [4.2.3. Iteration 3: <Servicios de Pagos y Transacciones>](#431-iteration-3-servicios-de-pagos-y-transacciones)
+  - [4.2.4. Iteration 4: <Notificaciones y Mensajería en Tiempo Real>](#431-notificaciones-y-mensajeria-en-tiempo-real)
+  - [4.2.5. Iteration 5: <Reportes, Métricas y Soporte>](#431-reportes-metricas-y-soporte)
+      - [4.2.1.1. Architectural Design Backlog 1](#432-architectural-design-backlog-1)
+      - [4.2.1.2. Establish Iteration Goal by Selecting Drivers](#432-establish-iteration-goal-by-selecting-drivers)
+      - [4.2.1.3. Choose One or More Elements of the System to Refine](#432-choose-one-or-more-elements-of-the-system-to-refine)
+      - [4.2.1.4. Choose One or More Design Concepts That Satisfy the Selected Drivers](#432-choose-one-or-more-design-concepts-that-satisfy-the-selected-drivers)
+      - [4.2.1.5. Instantiate Architectural Elements, Allocate Responsibilities, and Define Interfaces](#432-instantiate-architectural-elements-allocate-responsibilities-and-define-interfaces)
+      - [4.2.1.6. Sketch Views (C4 & UML) and Record Design Decisions](#432-sketch-views-c4-&-uml-and-record-design-decisions)
+      - [4.2.1.7. Analysis of Current Design and Review Iteration Goal (Kanban Board)](#432-analysis-of-current-design-and-review-iteration-goal-kanban-board)
 
 ### [Chapter V: Product Implementation, Validation & Deployment](#chapter-v-product-implementation-validation--deployment)
 - [5.1. Software Configuration Management](#51-software-configuration-management)
@@ -3219,7 +3220,7 @@ Cada módulo expone endpoints REST documentados con Swagger.
 | Sprint  -1 Review               |
 | Resumen                         | No hubo sprint anterior.                                                                                                                                                                     |
 | Sprint  1 Retrospective         |
-| Resumen                         | Se creará la organización de Car2Go en Github y el repositorio de la organización.                                                                                                                  |
+| Resumen                         | Se creará la organización de AutoMatch en Github y el repositorio de la organización.                                                                                                                  |
 | **Sprint Goal & User Stories**  |
 | Sprint 1 Velocity               | 21 points                                                                                                                                                                                    |
 | Sum of Story Points             | 21 points                                                                                                                                                                                    |
@@ -3432,7 +3433,7 @@ Para el presente sprint se ha desarrollado la landing page. Para el despliegue s
   <br><br>
 * Style Guidelines: [Style Guidelines](https://www.figma.com/design/T9hwKnrPJuHl19YGdNb9mg/Open-source?t=7O5WsCcQsFaskDcW-1)
   <br><br>
-* Web Applications: [Car2Go](https://car2go-c60fa.web.app/) 
+* Web Applications: [AutoMatch](https://car2go-c60fa.web.app/) 
   <br><br>
 * Exposición TB1: [Link](https://youtu.be/Zb57q8cjGd0?si=k1vKumN4gezw2Lyq)
 * Exposicion TB2: [Link](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202114851_upc_edu_pe/EU3C5Ale3ipDk2jD7nrlmQQBDTs2EBhWG9qFHJ4d1wSIBA?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=JsW3ez)
