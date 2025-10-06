@@ -1155,29 +1155,77 @@ Podemos ver que hay muchas actividades que comparten los 3 segmentos sin embargo
   ## 2.4.2. Requisitos no Funcionales
 - **RNF-01: Rendimiento:** <br>
   La plataforma debe responder a solicitudes de página en menos de 2 segundos bajo carga normal (hasta 500 usuarios simultáneos). <br>
+  
+  **Métricas:** <br>
+  - Tiempo promedio de respuesta del servidor: ≤ 2 s.
+  - Tasa de error de solicitudes HTTP: < 1 %.
+  - Número máximo de usuarios concurrentes sin degradar el rendimiento: ≥ 500. <br>
 
 - **RNF-02: Escalabilidad:** <br>
   La arquitectura debe soportar el aumento de usuarios sin degradar la experiencia, permitiendo escalamiento horizontal de servicios clave (API, base de datos). <br>
+
+  **Métricas:** <br>
+  - Capacidad de aumentar recursos (instancias o pods) con un downtime < 5 min.
+  - Rendimiento mantenido con un incremento del 100 % de usuarios concurrentes (de 500 a 1000).
+  - Tasa de uso de CPU y RAM durante la carga: ≤ 70 % en promedio. <br>
 
 - **RNF-03: Seguridad:** <br>
   - Autenticación segura con almacenamiento de contraseñas cifradas (hash). 
   - Conexión segura (HTTPS/TLS).
   - Control de acceso basado en roles (comprador/vendedor/taller). <br>
 
+  **Métricas:** <br>
+
+  - Contraseñas almacenadas usando bcrypt o Argon2 con mínimo 10 rondas de hash.
+  - Todas las conexiones protegidas por HTTPS/TLS 1.2 o superior.
+  - 100 % de endpoints sensibles protegidos por autenticación.
+  - Pruebas OWASP con nivel de severidad alto = 0 vulnerabilidades. <br>
+
 - **RNF-04: Usabilidad:** <br>
   La interfaz debe ser responsive para dispositivos móviles y desktops. Navegación intuitiva, accesible a usuarios sin experiencia técnica. <br>
+
+  **Métricas:** <br>
+
+  - Compatibilidad verificada en ≥ 3 resoluciones (desktop, tablet, móvil).
+  - Tiempo promedio de aprendizaje del usuario nuevo: < 5 min (medido con pruebas piloto).
+  - Puntuación de usabilidad (SUS – System Usability Scale): ≥ 80 puntos. <br>
 
 - **RNF-05: Disponibilidad:** <br>
   El sistema debe tener una disponibilidad mínima del 99 % mensual, excluyendo ventanas planificadas de mantenimiento. <br>
 
+  **Métricas:** <br>
+
+  - Uptime mensual medido por monitoreo: ≥ 99 %.
+  - Tiempo máximo de inactividad no planificada: < 7 h/mes.
+  - Ventanas de mantenimiento programadas: ≤ 4 h/mes. <br>
+
 - **RNF-06: Mantenibilidad:** <br>
   Código modular, documentado y probado (unitario y de integración). Adopción de buenas prácticas y estilo de codificación estandarizado. <br>
+
+  **Métricas:** <br>
+
+  - Cobertura de pruebas unitarias: ≥ 80 %.
+  - Cobertura de pruebas de integración: ≥ 70 %.
+  - Documentación técnica actualizada: 100 % de los módulos principales.
+  - Complejidad ciclomática por módulo: ≤ 10. <br>
 
 - **RNF-07: Privacidad de datos:** <br>
   Cumplimiento con normativas de protección de datos (GDPR u otras locales). Los datos sensibles (como comprobantes de pago) deben almacenarse cifrados. <br>
 
+  **Métricas:** <br>
+
+  - Datos sensibles cifrados con AES-256.
+  - Cumplimiento de políticas de retención de datos: 100 % de registros sensibles.
+  - Pruebas de cumplimiento y auditorías semestrales: sin hallazgos críticos. <br>
+
 - **RNF-08: Internacionalización:** <br>
   Interfaz preparada para varios idiomas y formatos (fechas, precios), permitiendo fácil traducción y localización.
+
+  **Métricas:**
+
+  - Soporte mínimo para 2 idiomas (español e inglés).
+  - Cambios de formato (moneda, fecha) aplicados en < 1 s.
+  - Traducción validada en 100 % de los textos visibles de la interfaz.
 <br><br>
 
 # Capítulo III: Requirements Specification
