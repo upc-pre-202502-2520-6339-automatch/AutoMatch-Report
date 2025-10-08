@@ -1,46 +1,39 @@
 <!-- # <center>COURSE PROJECT</center> -->
 
 <p align="center">
-    <strong>Universidad Peruana de Ciencias Aplicadas</strong><br>
 <br>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/f/fc/UPC_logo_transparente.png"><br>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/f/fc/UPC_logo_transparente.png" width="30%" alt="UPC Logo"><br>
 <br>
-    <strong>Ingeniería de Software - 7mo Ciclo</strong><br>
+    <strong>UPC - Universidad Peruana de Ciencias Aplicadas</strong><br>
+    <strong>Carrera de Ingeniería de Software</strong><br>
 <br>
-    <strong>Fundamentos de Arquitectura de Software - 6339</strong><br>  
+    <strong>Fundamentos de Arquitectura de Software</strong><br>  
+    <strong>2025-20</strong><br>  
 <br>
-    <strong>Profesor: Ernesto Ocampo Tello</strong><br>
-    <br> <strong>INFORME DE TRABAJO FINAL - TF </strong> 
 </p>
 
 <p align="center">
+    <strong>Sección: 6339 </strong><br>
+    <strong>Docente: Ernesto Ocampo Tello </strong>
+</p>
+
+
+<p align="center">
+    <strong>Informe TF </strong><br>
     <strong>Startup: DriveTrust </strong><br>
     <strong>Producto: AutoMatch </strong>
 </p>
 
-<h3 align="center" >Relación de integrantes:</h3>
-<table align="center">
-  <tr>
-      <th style="text-align:center;">Integrante</th>
-      <th style="text-align:center;">Codigo</th>
-  </tr>
-  <tr>
-      <td>Vera Nuñez, Nicolas Alejandro</td>
-      <td>U202214869</td>
-  </tr>
-  <tr>
-      <td>Chávarri Zarzosa, Daniel Jhared</td>
-      <td>U202211108</td>
-  </tr>
-  <tr>
-      <td>Sihuar Ccotarma Ttito, Eduardo Eusebio</td>
-      <td>U20211c736</td>
-  </tr>
-</table>
-
 <p align="center">
-    <strong>Setiembre, 2025</strong>
+    <strong>Team Members:</strong><br>
+    <strong>Chávarri Zarzosa, Daniel Jhared</strong><br>
+    <strong>Sihuar Ccotarma Ttito, Eduardo Eusebio </strong><br>
+    <strong>Vera Nuñez, Nicolas Alejandro</strong>
 </p>
+
+
+
+
 
 # Registro de Versiones del Informe
 
