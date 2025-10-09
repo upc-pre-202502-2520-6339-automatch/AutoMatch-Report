@@ -1712,55 +1712,166 @@ El diagrama de componentes de AutoMatch representa la estructura interna del sis
 
 **Descripción de la base de datos relacional** <br>
 
-La base de datos AutoMatch está diseñada bajo un modelo relacional en SQL Server, estructurando la información de usuarios, vehículos, certificaciones, reportes técnicos, pagos, notificaciones y auditorías.
+La base de datos AutoMatch está diseñada bajo un modelo relacional en PostgresSQL, estructurando la información de usuarios, vehículos, certificaciones, reportes técnicos, pagos, notificaciones y auditorías.
 Cada entidad se encuentra normalizada y vinculada mediante claves foráneas que garantizan la integridad referencial, lo que permite manejar de manera segura las transacciones y la trazabilidad de cada operación dentro de la plataforma de compra y venta de autos usados. <br><br>
 
 <table>
   <thead>
     <tr>
       <th>Entidad</th>
-      <th>Descripción</th>
-      <th>Justificación</th>
+      <th>Descripción (qué hace)</th>
+      <th>Justificación (por qué existe)</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td><b>User</b></td>
-      <td>Almacena datos de usuarios: nombre, email, contraseña y rol.</td>
-      <td>Gestiona compradores, vendedores, especialistas y administradores en una sola tabla.</td>
+      <td><b>Perfil (Usuario)</b></td>
+      <td>Gestiona los datos de la persona en la plataforma (rol, contacto, estado) y actúa como vendedor/comprador.</td>
+      <td>Separa la identidad de negocio de las credenciales para modelar permisos y relaciones comerciales.</td>
     </tr>
     <tr>
-      <td><b>Vehicle</b></td>
-      <td>Contiene la información de los autos: marca, modelo, año y estado.</td>
-      <td>Permite publicar, gestionar y asociar vehículos a usuarios y certificaciones.</td>
+      <td><b>Cuenta (IAM)</b></td>
+      <td>Autentica al usuario (usuario, contraseña cifrada, 2FA, último acceso).</td>
+      <td>Centraliza seguridad y acceso sin contaminar el modelo de negocio.</td>
     </tr>
     <tr>
-      <td><b>Certification</b></td>
-      <td>Registra solicitudes y resultados de inspecciones técnicas.</td>
-      <td>Garantiza que los vehículos pasen por revisión antes de ser vendidos.</td>
+      <td><b>Verificación de Identidad</b></td>
+      <td>Orquesta el estado KYC del usuario (pendiente/verificado/rechazado).</td>
+      <td>Reduce fraude y eleva confianza antes de operar pagos/ventas.</td>
     </tr>
     <tr>
-      <td><b>Report</b></td>
-      <td>Incluye reportes técnicos con detalles y estado del vehículo.</td>
-      <td>Da soporte documental al proceso de certificación y estado del vehículo.</td>
+      <td><b>Documento KYC</b></td>
+      <td>Almacena referencias a documentos de identidad y su integridad (hash).</td>
+      <td>Aporta evidencia auditable para validar la identidad del usuario.</td>
     </tr>
     <tr>
-      <td><b>Payment</b></td>
-      <td>Gestiona las transacciones: monto, método, estado y fecha.</td>
-      <td>Permite validar los pagos seguros entre compradores y vendedores.</td>
+      <td><b>Publicación</b></td>
+      <td>Exhibe una oferta de venta con precio, estado y visibilidad.</td>
+      <td>Es la unidad comercial del marketplace que conecta vehículo, vendedor y demanda.</td>
     </tr>
     <tr>
-      <td><b>Notification</b></td>
-      <td>Contiene los mensajes, fecha y estado de las notificaciones.</td>
-      <td>Envía alertas a usuarios sobre pagos, estados de vehículos y certificaciones.</td>
+      <td><b>Vehículo</b></td>
+      <td>Representa el bien a vender con atributos técnicos base (VIN/placa, marca, año, etc.).</td>
+      <td>Permite identificar y operar sobre el activo real del negocio.</td>
     </tr>
     <tr>
-      <td><b>AuditLogs</b></td>
-      <td>Registra acciones de los usuarios (auditoría de eventos).</td>
-      <td>Brinda trazabilidad y seguridad en la plataforma.</td>
+      <td><b>Especificaciones de Vehículo</b></td>
+      <td>Detalla motor, transmisión, combustible, asientos, etc.</td>
+      <td>Normaliza características para búsqueda, filtros y comparación.</td>
+    </tr>
+    <tr>
+      <td><b>Recurso Multimedia</b></td>
+      <td>Gestiona fotos y videos asociados a la publicación (incluye portada).</td>
+      <td>Mejora la presentación del producto y la conversión.</td>
+    </tr>
+    <tr>
+      <td><b>Favorito</b></td>
+      <td>Permite que un usuario guarde publicaciones para revisarlas luego.</td>
+      <td>Incrementa retención y facilita el seguimiento de interés.</td>
+    </tr>
+    <tr>
+      <td><b>Taller</b></td>
+      <td>Registra los centros aliados que prestan servicios de inspección/certificación.</td>
+      <td>Integra terceros especializados que otorgan confianza técnica.</td>
+    </tr>
+    <tr>
+      <td><b>Servicio de Certificación</b></td>
+      <td>Define los tipos de inspección y su tarifa por taller.</td>
+      <td>Estandariza la oferta de servicios técnicos y sus costos.</td>
+    </tr>
+    <tr>
+      <td><b>Solicitud de Inspección</b></td>
+      <td>Agenda y controla el flujo de una inspección (solicitada, programada, completada).</td>
+      <td>Coordina a comprador/vendedor con el taller para evaluar el vehículo.</td>
+    </tr>
+    <tr>
+      <td><b>Informe de Inspección</b></td>
+      <td>Registra resultados, hallazgos y puntaje del vehículo.</td>
+      <td>Provee evidencia objetiva que respalda la decisión de compra.</td>
+    </tr>
+    <tr>
+      <td><b>Oferta</b></td>
+      <td>Captura la propuesta de compra (monto, mensaje, vigencia, estado).</td>
+      <td>Formaliza la negociación previa a la venta.</td>
+    </tr>
+    <tr>
+      <td><b>Transacción</b></td>
+      <td>Consolida el cierre de la venta (desde aceptación hasta entrega).</td>
+      <td>Orquesta el ciclo de venta y su trazabilidad.</td>
+    </tr>
+    <tr>
+      <td><b>Pago</b></td>
+      <td>Registra el cobro (monto, método) y su estado de validación.</td>
+      <td>Permite confirmar/rechazar pagos y mover el estado de la transacción.</td>
+    </tr>
+    <tr>
+      <td><b>Comprobante de Pago</b></td>
+      <td>Adjunta evidencia bancaria (código de operación, archivo, hash).</td>
+      <td>Habilita validación antifraude y auditoría financiera.</td>
+    </tr>
+    <tr>
+      <td><b>Custodia (Escrow)</b></td>
+      <td>Retiene fondos hasta que se cumplan condiciones de entrega/traspaso.</td>
+      <td>Protege a ambas partes y reduce riesgos en la operación.</td>
+    </tr>
+    <tr>
+      <td><b>Conversación</b></td>
+      <td>Abre un canal de mensajes entre partes sobre una publicación.</td>
+      <td>Centraliza la comunicación vinculada a una operación concreta.</td>
+    </tr>
+    <tr>
+      <td><b>Mensaje</b></td>
+      <td>Almacena cada envío de texto con su emisor y tiempo.</td>
+      <td>Deja registro verificable de la interacción comercial.</td>
+    </tr>
+    <tr>
+      <td><b>Notificación</b></td>
+      <td>Emite alertas del sistema (pagos, estados, inspecciones) con lectura.</td>
+      <td>Mantiene informados a los usuarios y mejora el seguimiento.</td>
+    </tr>
+    <tr>
+      <td><b>Plan</b></td>
+      <td>Define beneficios y límites de suscripción para vendedores.</td>
+      <td>Soporta el modelo de ingresos por cuota y features.</td>
+    </tr>
+    <tr>
+      <td><b>Suscripción</b></td>
+      <td>Vincula a un vendedor con un plan activo y su vigencia.</td>
+      <td>Habilita beneficios (máx. publicaciones, destacados) según pago.</td>
+    </tr>
+    <tr>
+      <td><b>Promoción</b></td>
+      <td>Crea campañas con descuento y fechas de vigencia.</td>
+      <td>Impulsa visibilidad y conversión de publicaciones.</td>
+    </tr>
+    <tr>
+      <td><b>Promoción–Publicación</b></td>
+      <td>Aplica una promoción a una o varias publicaciones.</td>
+      <td>Permite segmentar y reutilizar campañas en múltiples anuncios.</td>
+    </tr>
+    <tr>
+      <td><b>Perfil de Preferencias</b></td>
+      <td>Guarda criterios del comprador (marcas, rangos de precio/año, carrocería).</td>
+      <td>Alimenta el motor de recomendaciones personalizadas.</td>
+    </tr>
+    <tr>
+      <td><b>Recomendación</b></td>
+      <td>Propone publicaciones a un usuario con motivo y puntaje.</td>
+      <td>Mejora el descubrimiento y la tasa de conversión.</td>
+    </tr>
+    <tr>
+      <td><b>Reporte de Vendedor</b></td>
+      <td>Agrega métricas por período (vistas, contactos, ofertas, conversiones).</td>
+      <td>Permite analizar desempeño y optimizar estrategia comercial.</td>
+    </tr>
+    <tr>
+      <td><b>Ticket de Soporte</b></td>
+      <td>Gestiona incidencias/consultas ligadas a usuarios y publicaciones.</td>
+      <td>Ordena la atención al cliente y el soporte operativo.</td>
     </tr>
   </tbody>
-</table> <br><br><br>
+</table>
+
 
 <img src="assets/AutoMatch Database Diagram.png"> <br><br><br>
 
