@@ -3367,7 +3367,7 @@ Para la entrega del Sprint 1, logramos completar el desarrollo, la implementaci�
     <td>07fa8d6</td>
     <td>Nicolas Vera</td>
     <td>doc: add acceptance tests</td>
-    <td>3/09/2024</td>
+    <td>09/10/2025</td>
   </tr>
 </table>
 </div>
@@ -3411,7 +3411,7 @@ POST /api/v1/auth/login
 
 Para la entrega del Sprint número 1, se desplego el landing page parcialmente completa.
 
-**https://upc-pre-si729-2402-wx51-g3-cibersofa.github.io/Landing-page/**
+**https://upc-pre-202502-2520-6339-automatch.github.io/Landing-Page/**
 
 Para el presente sprint se ha desarrollado la landing page. Para el despliegue se emplearon las siguientes herramientas:
 
@@ -3502,7 +3502,7 @@ Para el presente sprint se ha desarrollado la landing page. Para el despliegue s
 
 * Diseño Landing Page:  [Figma](https://www.figma.com/design/T9hwKnrPJuHl19YGdNb9mg/Open-source?node-id=32-311&t=7O5WsCcQsFaskDcW-1)
   <br><br>
-* Landing Page: [Landing Page](https://upc-pre-si729-2402-wx51-g3-cibersofa.github.io/Landing-page/)
+* Landing Page: [Landing Page](https://upc-pre-202502-2520-6339-automatch.github.io/Landing-Page/)
   <br><br>
 * Miro: [Miro](https://miro.com/app/board/uXjVMm70eUI=/)
   <br><br>
