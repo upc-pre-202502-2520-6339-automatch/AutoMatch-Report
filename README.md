@@ -1658,7 +1658,7 @@ Presenta la vista arquitectónica, definiendo los contenedores principales: Fron
   </tbody>
 </table> <br><br>
 
-<img src="assets/Container Diagram.png"> <br><br><br>
+<img src="assets/Container Diagram.svg"> <br><br><br>
 
 **Diagrama de Componentes (C4 Model - Nivel 3)** <br>
 
