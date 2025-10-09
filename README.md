@@ -31,31 +31,19 @@
     <strong>Vera Nuñez, Nicolas Alejandro</strong>
 </p>
 
+##
+##
+##
+##
+##
 
 
 
 
-# Registro de Versiones del Informe
-
-|Versión|Fecha|Autor|Descripción de modificación|
-|-------|-----|-----|---------------------------|
-|V0.1|03/09/2025|Daniel y Eduardo|Capítulo 1|
-|V0.2|03/09/2025|Nicolas| Capitulo 2|
-|V0.3|03/09/2025|Daniel<br>Eduardo<br>Nicolas|Capítulo 3|
 
 
-**Project Report Collaboration Insights**
-URL del repositorio de GitHub de la organización: [https://github.com/upc-pre-202502-2520-6339-automatch](https://github.com/upc-pre-202502-2520-6339-automatch)
 
-Avance 1
 
-Para el desarrollo del Avance 1, se optó por dividir el trabajo de la siguiente forma:
-
-| Integrante                          | Actvidades Asignadas                                                                                                                                                |
-|-------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Chávarri Zarzosa, Daniel Jhared  | - Capitulo 1 <br> - Capitulo 3
-| Sihuar Ccotarma Ttito, Eduardo Eusebio     | - Capitulo 1 <br> - Capítulo 3                                                                                                     |
-| Vera Nuñez, Nicolas Alejandro                 | - Capitulo 2 <br> - Capítulo 3 <br>                                                                                                                                                                                                                                         
 # Contenido
 ## Tabla de Contenidos
 ### [Registro de versiones del informe](#registro-de-versiones-del-informe)
@@ -157,18 +145,18 @@ conclusiones cual por parte del grupo, que permiten sustentar el haber alcanzado
   </tr>
   <tr>
     <td text-align="justify"><b>Actualiza conceptos y conocimientos necesarios para su desarrollo profesional y en especial para su proyecto en soluciones de software.</b></td>
-    <td text-align="justify"> Chávarri Zarzosa, Daniel Jhared<br> Avance 1: <br> Para el primer avance, realicé el capítulo 1 de manera colaborativa, actualizando y reforzando conceptos de documentación técnica y organización de proyectos en soluciones de software. Me aseguré de que todos los puntos fueran abordados correctamente, verifiqué que mis compañeros cumplieran con sus entregables a tiempo y realicé la reorganización del informe para mantener la coherencia y calidad del documento.  <br>
-        <br>Sihuar Ccotarma Ttito, Eduardo Eusebio<br> Avance 1: <br>En el primer avance, participé en la elaboración de los capítulos 2 y 3 de forma conjunta, revisando y fortaleciendo los conceptos relacionados con la documentación técnica y la gestión de proyectos de software. Me aseguré de que cada apartado estuviera correctamente cubierto, confirmé que mis compañeros entregaran sus tareas en los plazos establecidos y realicé una reestructuración del informe para preservar la consistencia y la calidad del documento.<br>
-        <br>Vera Nuñez, Nicolas Alejandro<br> Avance 1: <br> En el primer avance, participé en la elaboración de los capítulos 2 y 3 de forma conjunta, revisando y fortaleciendo los conceptos de documentación técnica y gestión de proyectos en el ámbito del software. Me aseguré de que todos los apartados fueran tratados adecuadamente, confirmé que mis compañeros cumplieran con sus entregas en los plazos establecidos y realicé una reestructuración del informe para conservar la consistencia y la calidad del documento.
+    <td text-align="justify"> Chávarri Zarzosa, Daniel Jhared<br> TP: <br> Para el primer avance, realicé el capítulo 1 de manera colaborativa, actualizando y reforzando conceptos de documentación técnica y organización de proyectos en soluciones de software. Me aseguré de que todos los puntos fueran abordados correctamente, verifiqué que mis compañeros cumplieran con sus entregables a tiempo y realicé la reorganización del informe para mantener la coherencia y calidad del documento.  <br>
+        <br>Sihuar Ccotarma Ttito, Eduardo Eusebio<br> TP: <br>En el primer avance, participé en la elaboración de los capítulos 2 y 3 de forma conjunta, revisando y fortaleciendo los conceptos relacionados con la documentación técnica y la gestión de proyectos de software. Me aseguré de que cada apartado estuviera correctamente cubierto, confirmé que mis compañeros entregaran sus tareas en los plazos establecidos y realicé una reestructuración del informe para preservar la consistencia y la calidad del documento.<br>
+        <br>Vera Nuñez, Nicolas Alejandro<br> TP: <br> En el primer avance, participé en la elaboración de los capítulos 2 y 3 de forma conjunta, revisando y fortaleciendo los conceptos de documentación técnica y gestión de proyectos en el ámbito del software. Me aseguré de que todos los apartados fueran tratados adecuadamente, confirmé que mis compañeros cumplieran con sus entregas en los plazos establecidos y realicé una reestructuración del informe para conservar la consistencia y la calidad del documento.
    </td>
     <td text-align="justify">AutoMatch fue diseñado con el objetivo de ofrecer una experiencia de usuario excepcional y diferenciarse de la competencia. Los estilos visuales seleccionados, junto con una cuidadosa organización de la información, garantizan no solo coherencia estética, sino también una navegación intuitiva y un acceso simplificado a las funciones clave para todos los usuarios, independientemente de su nivel de experiencia.<br>
 </tr>
 <br><br>
   <tr text-align="justify">
     <td><b>Reconoce la necesidad del aprendizaje permanente para el desempeño profesional y el desarrollo de proyectos en soluciones de software.</b></td>
-<td> Chávarri Zarzosa, Daniel Jhared<br> Avance 1: <br> Durante el desarrollo del proyecto reconocí la importancia del aprendizaje permanente, ya que el área de soluciones de software evoluciona constantemente con nuevas herramientas, metodologías y lenguajes de programación. Identifiqué que para lograr un mejor desempeño profesional debo mantenerme actualizado mediante la investigación continua, el uso de recursos en línea y la práctica colaborativa. Este hábito de aprendizaje me permitirá adaptarme a los cambios tecnológicos y garantizar la calidad de los proyectos de software en los que participe.<br>
-        <br>Sihuar Ccotarma Ttito, Eduardo Eusebio <br> Avance 1: <br> Durante la ejecución del proyecto entendí la importancia del aprendizaje constante, ya que el ámbito de las soluciones de software se transforma de manera continua con nuevas herramientas, enfoques y lenguajes de programación. Reconocí que, para lograr un desempeño profesional más sólido, resulta indispensable mantenerme actualizado a través de la investigación permanente, el uso de recursos digitales y el trabajo colaborativo. Este hábito de aprendizaje me permitirá responder a los cambios tecnológicos y garantizar la calidad en los proyectos de software en los que participe.<br>
-        <br>Vera Nuñez, Nicolas Alejandro <br> Avance 1: <br> A lo largo del desarrollo del proyecto comprendí la relevancia del aprendizaje continuo, ya que el campo de las soluciones de software cambia constantemente con nuevas herramientas, metodologías y lenguajes de programación. Reconocí que, para alcanzar un mejor rendimiento profesional, es necesario mantenerme actualizado mediante la investigación permanente, el aprovechamiento de recursos digitales y la práctica en equipo. Este hábito de aprendizaje me permitirá adaptarme a los avances tecnológicos y asegurar la calidad de los proyectos de software en los que participe.
+<td> Chávarri Zarzosa, Daniel Jhared<br> TP: <br> Durante el desarrollo del proyecto reconocí la importancia del aprendizaje permanente, ya que el área de soluciones de software evoluciona constantemente con nuevas herramientas, metodologías y lenguajes de programación. Identifiqué que para lograr un mejor desempeño profesional debo mantenerme actualizado mediante la investigación continua, el uso de recursos en línea y la práctica colaborativa. Este hábito de aprendizaje me permitirá adaptarme a los cambios tecnológicos y garantizar la calidad de los proyectos de software en los que participe.<br>
+        <br>Sihuar Ccotarma Ttito, Eduardo Eusebio <br> TP: <br> Durante la ejecución del proyecto entendí la importancia del aprendizaje constante, ya que el ámbito de las soluciones de software se transforma de manera continua con nuevas herramientas, enfoques y lenguajes de programación. Reconocí que, para lograr un desempeño profesional más sólido, resulta indispensable mantenerme actualizado a través de la investigación permanente, el uso de recursos digitales y el trabajo colaborativo. Este hábito de aprendizaje me permitirá responder a los cambios tecnológicos y garantizar la calidad en los proyectos de software en los que participe.<br>
+        <br>Vera Nuñez, Nicolas Alejandro <br> TP: <br> A lo largo del desarrollo del proyecto comprendí la relevancia del aprendizaje continuo, ya que el campo de las soluciones de software cambia constantemente con nuevas herramientas, metodologías y lenguajes de programación. Reconocí que, para alcanzar un mejor rendimiento profesional, es necesario mantenerme actualizado mediante la investigación permanente, el aprovechamiento de recursos digitales y la práctica en equipo. Este hábito de aprendizaje me permitirá adaptarme a los avances tecnológicos y asegurar la calidad de los proyectos de software en los que participe.
     <td>AutoMatch fue diseñado con el objetivo de ofrecer una experiencia de usuario excepcional y destacar frente a la competencia. Los estilos visuales cuidadosamente seleccionados y la organización meticulosa de la información garantizan una coherencia visual sólida. Además, facilitan la navegación y el acceso a las funciones clave, haciendo que tanto usuarios con experiencia técnica como aquellos menos familiarizados con la tecnología puedan utilizar la plataforma de manera eficiente. <br>
 </tr>
 <br><br>
@@ -3215,9 +3203,9 @@ public class AdminValidator implements RoleValidator {
 ### 5.2.2. Source Code Management
 
 **Repositorio de GitHub:**
-- Enlace para acceder a la [organización](https://github.com/UPC-PRE-SI729-2402-WX51-G3-Cibersofa)
-- Enlace para acceder al repositorio de la [landing page](https://github.com/UPC-PRE-SI729-2402-WX51-G3-Cibersofa/Landing-page)
-- Enlace para acceder al repositorio del [informe](https://github.com/UPC-PRE-SI729-2402-WX51-G3-Cibersofa/project-report)
+- Enlace para acceder a la [organización](https://github.com/upc-pre-202502-2520-6339-automatch)
+- Enlace para acceder al repositorio de la [landing page](https://github.com/upc-pre-202502-2520-6339-automatch/Landing-Page)
+- Enlace para acceder al repositorio del [informe](https://github.com/upc-pre-202502-2520-6339-automatch/AutoMatch-Report)
 
 **Flujo de trabajo GitFlow**
 
@@ -3274,7 +3262,7 @@ Para desplegar la landing page es necesario contar con una serie de requisitos, 
 5. Especificar la carpeta "docs" como la fuente de la página.
 6. Esperar a que GitHub realice las comprobaciones necesarias. Una vez culminado el proceso, se obtendrá un enlace que llevará al Landing Page desplegado.
 
-Link de la landing page desplegada: [AutoMatch](https://upc-pre-si729-2402-wx51-g3-cibersofa.github.io/Landing-page/)
+Link de la landing page desplegada: [AutoMatch](https://upc-pre-202502-2520-6339-automatch.github.io/Landing-Page/)
 
 ## 5.3. Microservices Implementation
 
@@ -3500,21 +3488,18 @@ Para el presente sprint se ha desarrollado la landing page. Para el despliegue s
 
 ## VIII. Anexos
 
-* Diseño Landing Page:  [Figma](https://www.figma.com/design/T9hwKnrPJuHl19YGdNb9mg/Open-source?node-id=32-311&t=7O5WsCcQsFaskDcW-1)
+* Diseño Landing Page:  [Figma](https://www.figma.com/design/eLYFGI0PdT27VzFq3aPYRs/AutoMatch?node-id=0-1&t=YVtp6een8r0cYZHh-1)
   <br><br>
 * Landing Page: [Landing Page](https://upc-pre-202502-2520-6339-automatch.github.io/Landing-Page/)
   <br><br>
 * Miro: [Miro](https://miro.com/app/board/uXjVMm70eUI=/)
   <br><br>
-* Organización Github: [Organización](https://github.com/UPC-PRE-SI729-2402-WX51-G3-Cibersofa) 
+* Organización Github: [Organización](https://github.com/upc-pre-202502-2520-6339-automatch) 
   <br><br>
 * [Registro de entrevistas](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202219284_upc_edu_pe/EU3ocaW1vF9KhmOYIXX3j44BM3JEIi_35Pc0mA_-rIpoQA?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=b769rK)
   <br><br>
-* Style Guidelines: [Style Guidelines](https://www.figma.com/design/T9hwKnrPJuHl19YGdNb9mg/Open-source?t=7O5WsCcQsFaskDcW-1)
+* Style Guidelines: [Style Guidelines](https://www.figma.com/design/eLYFGI0PdT27VzFq3aPYRs/AutoMatch?node-id=0-1&t=YVtp6een8r0cYZHh-1)
   <br><br>
-* Web Applications: [AutoMatch](https://car2go-c60fa.web.app/) 
-  <br><br>
-* Trello: [Link](https://trello.com/invite/b/672593151a102b5df4062300/ATTIee8d366a57b61466153105a6f5824169062AAAF0/sprint-3)
+
 * Entrevistas: [Link](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202114851_upc_edu_pe/ESsGiH2lXEFMofBRTbj8MMsBmmRiMvGANFghatGlMzFqSw?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=ACVtah)
-* [About-The-Product](https://youtu.be/QHxKoa7xo-E)
-* [Swagger](https://car2go-platform-hpdzhtb8ekceg9gd.canadacentral-01.azurewebsites.net/swagger-ui/index.html)
+
