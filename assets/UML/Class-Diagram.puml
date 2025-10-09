@@ -1,0 +1,424 @@
+@startuml
+title AutoMatch - Diagrama de Clases (orientado a DDD) [ES]
+
+skinparam packageStyle rectangle
+skinparam classAttributeIconSize 0
+hide circle
+
+' =========================
+' Shared Kernel / Objetos de Valor
+' =========================
+package "Shared Kernel" {
+  class Dinero {
+    +monto: decimal
+    +moneda: String
+  }
+
+  class Direccion {
+    +calle: String
+    +ciudad: String
+    +region: String
+    +codigoPostal: String
+    +pais: String
+  }
+
+  class InfoContacto {
+    +correoElectronico: String
+    +telefono: String
+  }
+
+  class ReferenciaDocumento {
+    +id: UUID
+    +tipo: String
+    +url: String
+    +hash: String
+  }
+
+  enum EstadoVehiculo {
+    LISTADO
+    RESERVADO
+    VENDIDO
+    FUERA_MERCADO
+  }
+
+  enum EstadoPublicacion {
+    BORRADOR
+    PUBLICADA
+    PAUSADA
+    VENDIDA
+    EXPIRADA
+  }
+
+  enum EstadoPago {
+    PENDIENTE
+    VALIDANDO
+    CONFIRMADO
+    RECHAZADO
+    REEMBOLSADO
+  }
+
+  enum EstadoIdentidad {
+    PENDIENTE
+    VERIFICADO
+    RECHAZADO
+  }
+
+  enum EstadoInspeccion {
+    SOLICITADA
+    PROGRAMADA
+    COMPLETADA
+    REPARACIONES_RECOMENDADAS
+  }
+
+  enum Rol {
+    COMPRADOR
+    VENDEDOR
+    TALLER_TECNICO
+    ADMIN
+  }
+}
+
+' =========================
+' Identidad y Acceso (IAM)
+' =========================
+package "Identidad y Acceso (IAM)" {
+  class Usuario {
+    +usuarioId: UUID
+    +nombreCompleto: String
+    +roles: Set<Rol>
+    +creadoEn: DateTime
+    +estado: String
+    +obtenerRolPrincipal(): Rol
+  }
+
+  class Cuenta {
+    +cuentaId: UUID
+    +nombreUsuario: String
+    +hashContrasena: String
+    +ultimoIngresoEn: DateTime
+    +dosFAHabilitado: boolean
+  }
+
+  class VerificacionIdentidad {
+    +verificacionId: UUID
+    +estado: EstadoIdentidad
+    +enviadoEn: DateTime
+    +verificadoEn: DateTime
+  }
+
+  class DocumentoKyc {
+    +documentoId: UUID
+    +tipo: String
+    +anverso: ReferenciaDocumento
+    +reverso: ReferenciaDocumento
+  }
+
+  Usuario "1" o-- "1" Cuenta
+  Usuario "1" o-- "1" VerificacionIdentidad
+  VerificacionIdentidad "1" o-- "2" DocumentoKyc
+  Usuario "1" --> "1" InfoContacto
+  Usuario "0..*" --> "0..*" Direccion
+}
+
+' =========================
+' Catálogo (Vehículos y Publicaciones)
+' =========================
+package "Catálogo (Vehículos y Publicaciones)" {
+  class Vehiculo {
+    +vehiculoId: UUID
+    +vin: String
+    +marca: String
+    +modelo: String
+    +anio: int
+    +kilometrajeKm: int
+    +color: String
+    +estado: EstadoVehiculo
+  }
+
+  class EspecificacionesVehiculo {
+    +motor: String
+    +transmision: String
+    +tipoCombustible: String
+    +puertas: int
+    +asientos: int
+    +extras: String
+  }
+
+  class RecursoMultimedia {
+    +recursoId: UUID
+    +tipo: String
+    +uri: String
+    +descripcion: String
+    +esPortada: boolean
+  }
+
+  class Publicacion {
+    +publicacionId: UUID
+    +titulo: String
+    +descripcion: String
+    +precio: Dinero
+    +estado: EstadoPublicacion
+    +publicadaEn: DateTime
+    +expiraEn: DateTime
+  }
+
+  class Favorito {
+    +favoritoId: UUID
+    +agregadoEn: DateTime
+  }
+
+  Vehiculo "1" o-- "1" EspecificacionesVehiculo
+  Vehiculo "1" o-- "1..*" RecursoMultimedia
+  Publicacion "1" o-- "1" Vehiculo
+  Publicacion "1" --> "1" Dinero
+  Usuario "1" --> "0..*" Publicacion : es_dueño »
+  Usuario "1" --> "0..*" Favorito : guarda »
+  Favorito "*" --> "1" Publicacion
+  Favorito "*" --> "1" Usuario
+}
+
+' =========================
+' Talleres e Inspecciones
+' =========================
+package "Talleres e Inspecciones" {
+  class Taller {
+    +tallerId: UUID
+    +nombre: String
+    +ruc: String
+    +calificacion: double
+  }
+
+  class SolicitudInspeccion {
+    +solicitudId: UUID
+    +estado: EstadoInspeccion
+    +solicitadaEn: DateTime
+    +programadaPara: DateTime
+  }
+
+  class InformeInspeccion {
+    +informeId: UUID
+    +resumen: String
+    +puntaje: int
+    +hallazgos: String
+    +reparacionesRecomendadas: String
+    +creadoEn: DateTime
+  }
+
+  Taller "1" --> "1" Direccion
+  Taller "1" --> "1" InfoContacto
+  SolicitudInspeccion "1" --> "1" Publicacion
+  SolicitudInspeccion "1" --> "1" Taller
+  SolicitudInspeccion "0..1" --> "1" InformeInspeccion
+  InformeInspeccion "1" --> "1" Publicacion
+}
+
+' =========================
+' Transacciones y Pagos
+' =========================
+package "Transacciones y Pagos" {
+  class Oferta {
+    +ofertaId: UUID
+    +precioOfertado: Dinero
+    +mensaje: String
+    +creadaEn: DateTime
+    +expiraEn: DateTime
+    +esAceptada: boolean
+  }
+
+  class Transaccion {
+    +transaccionId: UUID
+    +creadaEn: DateTime
+    +estado: String
+  }
+
+  class Pago {
+    +pagoId: UUID
+    +monto: Dinero
+    +estado: EstadoPago
+    +metodo: String
+    +creadoEn: DateTime
+    +validadoEn: DateTime
+  }
+
+  class ComprobantePago {
+    +comprobanteId: UUID
+    +banco: String
+    +codigoOperacion: String
+    +subidoEn: DateTime
+    +soporte: ReferenciaDocumento
+  }
+
+  class Custodia {
+    +custodiaId: UUID
+    +montoRetenido: Dinero
+    +liberadoEn: DateTime
+    +estaLiberado: boolean
+  }
+
+  Publicacion "1" --> "0..*" Oferta
+  Oferta "*" --> "1" Usuario : comprador »
+  Publicacion "1" --> "1" Usuario : vendedor »
+  Transaccion "1" --> "1" Publicacion
+  Transaccion "1" --> "1" Oferta
+  Transaccion "1" o-- "1" Pago
+  Pago "1" o-- "0..1" ComprobantePago
+  Pago "1" --> "1" Dinero
+  Transaccion "0..1" o-- "1" Custodia
+  Custodia "1" --> "1" Dinero
+}
+
+' =========================
+' Mensajería y Notificaciones
+' =========================
+package "Mensajería y Notificaciones" {
+  class Conversacion {
+    +conversacionId: UUID
+    +creadaEn: DateTime
+    +abierta: boolean
+  }
+
+  class Mensaje {
+    +mensajeId: UUID
+    +contenido: String
+    +enviadoEn: DateTime
+    +leidoEn: DateTime
+  }
+
+  class Notificacion {
+    +notificacionId: UUID
+    +tipo: String
+    +carga: String
+    +enviadaEn: DateTime
+    +leida: boolean
+  }
+
+  Conversacion "1" o-- "2..*" Usuario : participantes
+  Conversacion "1" o-- "1..*" Mensaje
+  Mensaje "*" --> "1" Usuario : emisor
+  Notificacion "*" --> "1" Usuario : destinatario
+  Conversacion "1" --> "1" Publicacion
+}
+
+' =========================
+' Suscripciones y Facturación
+' =========================
+package "Suscripciones y Facturación" {
+  class Plan {
+    +planId: UUID
+    +nombre: String
+    +cuotaMensual: Dinero
+    +caracteristicas: String
+    +maxPublicaciones: int
+    +espaciosDestacados: int
+  }
+
+  class Suscripcion {
+    +suscripcionId: UUID
+    +iniciaEn: DateTime
+    +expiraEn: DateTime
+    +activa: boolean
+  }
+
+  Plan "1" --> "1" Dinero
+  Suscripcion "1" --> "1" Plan
+  Suscripcion "*" --> "1" Usuario : vendedor
+}
+
+' =========================
+' Publicidad y Promociones
+' =========================
+package "Publicidad y Promociones" {
+  class Promocion {
+    +promocionId: UUID
+    +nombre: String
+    +descripcion: String
+    +iniciaEn: DateTime
+    +terminaEn: DateTime
+    +porcentajeDescuento: double
+    +soloParaPlan: boolean
+  }
+
+  class EspacioDestacado {
+    +espacioId: UUID
+    +posicion: int
+    +desde: DateTime
+    +hasta: DateTime
+  }
+
+  Promocion "0..*" --> "0..*" Plan
+  EspacioDestacado "1" --> "1" Publicacion
+  Suscripcion "0..*" --> "0..*" EspacioDestacado
+}
+
+' =========================
+' Recomendaciones
+' =========================
+package "Recomendaciones" {
+  class PerfilPreferencias {
+    +perfilPreferenciasId: UUID
+    +marcas: Set<String>
+    +precioMin: Dinero
+    +precioMax: Dinero
+    +anioMin: int
+    +anioMax: int
+    +tiposCarroceria: Set<String>
+  }
+
+  class Recomendacion {
+    +recomendacionId: UUID
+    +creadaEn: DateTime
+    +motivo: String
+    +puntaje: double
+  }
+
+  PerfilPreferencias "1" --> "1" Usuario
+  Recomendacion "*" --> "1" Usuario
+  Recomendacion "*" --> "1" Publicacion
+}
+
+' =========================
+' Reportes y Soporte
+' =========================
+package "Reportes y Soporte" {
+  class ReporteVendedor {
+    +reporteId: UUID
+    +periodoInicio: Date
+    +periodoFin: Date
+    +vistas: int
+    +contactos: int
+    +ofertas: int
+    +conversiones: int
+  }
+
+  class TicketSoporte {
+    +ticketId: UUID
+    +titulo: String
+    +descripcion: String
+    +estado: String
+    +creadoEn: DateTime
+  }
+
+  ReporteVendedor "*" --> "1" Usuario : vendedor
+  TicketSoporte "*" --> "1" Usuario : solicitante
+  TicketSoporte "0..1" --> "1" Publicacion
+}
+
+' =========================
+' Notas
+' =========================
+note right of RecursoMultimedia
+"tipo: foto | video"
+end note
+
+note right of DocumentoKyc
+"tipo: p.ej. DNI, licenciaConducir"
+end note
+
+note "Agregados (sugeridos):\n- Publicacion { Vehiculo, RecursoMultimedia }\n- Transaccion { Pago, Custodia, ComprobantePago }\n- Conversacion { Mensaje }\n- Suscripcion { Plan }\n- SolicitudInspeccion { InformeInspeccion }\nObjetos de Valor: Dinero, Direccion, ReferenciaDocumento." as N1
+N1 .. Publicacion
+N1 .. Transaccion
+N1 .. Conversacion
+N1 .. Suscripcion
+N1 .. SolicitudInspeccion
+
+@enduml

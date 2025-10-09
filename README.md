@@ -30,7 +30,32 @@
     <strong>Sihuar Ccotarma Ttito, Eduardo Eusebio </strong><br>
     <strong>Vera Nuñez, Nicolas Alejandro</strong>
 </p>
-                                                                                                                                                                                                                                 
+
+
+
+
+
+# Registro de Versiones del Informe
+
+|Versión|Fecha|Autor|Descripción de modificación|
+|-------|-----|-----|---------------------------|
+|V0.1|03/09/2025|Daniel y Eduardo|Capítulo 1|
+|V0.2|03/09/2025|Nicolas| Capitulo 2|
+|V0.3|03/09/2025|Daniel<br>Eduardo<br>Nicolas|Capítulo 3|
+
+
+**Project Report Collaboration Insights**
+URL del repositorio de GitHub de la organización: [https://github.com/upc-pre-202502-2520-6339-automatch](https://github.com/upc-pre-202502-2520-6339-automatch)
+
+Avance 1
+
+Para el desarrollo del Avance 1, se optó por dividir el trabajo de la siguiente forma:
+
+| Integrante                          | Actvidades Asignadas                                                                                                                                                |
+|-------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Chávarri Zarzosa, Daniel Jhared  | - Capitulo 1 <br> - Capitulo 3
+| Sihuar Ccotarma Ttito, Eduardo Eusebio     | - Capitulo 1 <br> - Capítulo 3                                                                                                     |
+| Vera Nuñez, Nicolas Alejandro                 | - Capitulo 2 <br> - Capítulo 3 <br>                                                                                                                                                                                                                                         
 # Contenido
 ## Tabla de Contenidos
 ### [Registro de versiones del informe](#registro-de-versiones-del-informe)
@@ -155,7 +180,7 @@ En esta sección describiremos el perfil de nuestra Startup.
 
 ### 1.1.1. Descripción de la Startup
 
-AutoMatch es una startup creada en 2024 por un grupo de estudiantes de Ingeniería de Software.
+AutoMatch es una startup creada en 2025 por un grupo de estudiantes de Ingeniería de Software.
 Nuestra plataforma está dedicada a transformar el mercado de autos de segunda mano,
 ofreciendo una solución innovadora y accesible para personas que desean comprar o vender vehículos usados.
 
@@ -1537,9 +1562,14 @@ Modela el ciclo de vida de un vehículo dentro de la plataforma, pasando por est
 <img src="assets/Vehicle Diagram.PNG"> <br><br><br>
 
 **Diagrama de Clases** <br>
-Muestra las entidades principales del sistema (Usuario, Vehículo, Pago, Reporte Técnico, Notificación) y sus relaciones. Refleja herencias, asociaciones y operaciones clave, garantizando que la lógica de negocio se soporte en una estructura robusta y extensible. <br>
+El sistema se estructura en entidades núcleo: Usuario (con Cuenta y Verificación de Identidad), Publicación (que compone a Vehículo y sus RecursosMultimedia), Oferta y Transacción (que compone Pago, ComprobantePago y Custodia), además de Taller, Solicitud/Informe de Inspección, Conversación/Mensaje, Notificación y Suscripción/Plan para vendedores.
 
-<img src="assets/Class Diagram.PNG"> <br><br><br>
+Las relaciones principales son 1–N y 1–1: un Usuario vendedor administra Publicaciones; los compradores generan Ofertas; al aceptarse una oferta se crea la Transacción; el Pago (con Comprobante) define el estado y puede retener fondos en Custodia; una Publicación tiene múltiples RecursosMultimedia y puede marcarse como Favorito.
+
+Se emplean Objetos de Valor (Dinero, Dirección, ReferenciaDocumento) y enumeraciones de estado (publicación, vehículo, pago, inspección, identidad) para asegurar integridad y reglas de negocio.
+No se modelan herencias; se priorizan agregados y composiciones que soportan una lógica de negocio robusta, extensible y consistente con DDD.<br>
+
+<img src="assets/Class Diagram.png"> <br><br><br>
 
 **Diagrama de Contenedores (C4 Model – Nivel 2)** <br>
 Presenta la vista arquitectónica, definiendo los contenedores principales: Frontend Web, App Móvil, API Gateway y microservicios especializados (Users, Vehicles, Payments, Notifications, Messaging, etc.), cada uno con su propia base de datos y conexión a servicios externos. Esto justifica la separación de responsabilidades y la escalabilidad del sistema. <br><br>
