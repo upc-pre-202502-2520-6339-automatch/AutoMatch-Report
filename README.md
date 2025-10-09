@@ -145,18 +145,18 @@ conclusiones cual por parte del grupo, que permiten sustentar el haber alcanzado
   </tr>
   <tr>
     <td text-align="justify"><b>Actualiza conceptos y conocimientos necesarios para su desarrollo profesional y en especial para su proyecto en soluciones de software.</b></td>
-    <td text-align="justify"> Chávarri Zarzosa, Daniel Jhared<br> TP: <br> Para el primer avance, realicé el capítulo 1 de manera colaborativa, actualizando y reforzando conceptos de documentación técnica y organización de proyectos en soluciones de software. Me aseguré de que todos los puntos fueran abordados correctamente, verifiqué que mis compañeros cumplieran con sus entregables a tiempo y realicé la reorganización del informe para mantener la coherencia y calidad del documento.  <br>
-        <br>Sihuar Ccotarma Ttito, Eduardo Eusebio<br> TP: <br>En el primer avance, participé en la elaboración de los capítulos 2 y 3 de forma conjunta, revisando y fortaleciendo los conceptos relacionados con la documentación técnica y la gestión de proyectos de software. Me aseguré de que cada apartado estuviera correctamente cubierto, confirmé que mis compañeros entregaran sus tareas en los plazos establecidos y realicé una reestructuración del informe para preservar la consistencia y la calidad del documento.<br>
-        <br>Vera Nuñez, Nicolas Alejandro<br> TP: <br> En el primer avance, participé en la elaboración de los capítulos 2 y 3 de forma conjunta, revisando y fortaleciendo los conceptos de documentación técnica y gestión de proyectos en el ámbito del software. Me aseguré de que todos los apartados fueran tratados adecuadamente, confirmé que mis compañeros cumplieran con sus entregas en los plazos establecidos y realicé una reestructuración del informe para conservar la consistencia y la calidad del documento.
+    <td text-align="justify"> Chávarri Zarzosa, Daniel Jhared<br> TP: <br> En el trabajo parcial, me dediqué a mejorar los capítulos ya elaborados (incluido el Capítulo 1), actualizando y reforzando los conceptos de documentación técnica y organización de proyectos en software. Verifiqué que todos los puntos estuvieran correctamente abordados, aseguré el cumplimiento de entregables por parte del equipo y reorganicé el informe para mantener coherencia y calidad. Además, elaboré el Capítulo 5, integrándolo con el resto del documento.  <br>
+        <br>Sihuar Ccotarma Ttito, Eduardo Eusebio<br> TP: <br>En el trabajo parcial, me dediqué a mejorar los capítulos 2 y 3 elaborados de forma conjunta, revisando y reforzando los conceptos de documentación técnica y gestión de proyectos de software. Verifiqué que cada apartado estuviera correctamente cubierto, aseguré el cumplimiento de plazos por parte del equipo y realicé una reestructuración del informe para preservar la coherencia y la calidad. Además, desarrollé el Capítulo 5 e integré sus contenidos con el resto del documento.<br>
+        <br>Vera Nuñez, Nicolas Alejandro<br> TP: <br> En el trabajo parcial, me enfoqué en mejorar los capítulos 2 y 3 elaborados de forma conjunta, revisando y reforzando los conceptos de documentación técnica y gestión de proyectos de software. Verifiqué que todos los apartados estuvieran adecuadamente tratados, aseguré el cumplimiento de plazos por parte del equipo y realicé una reestructuración del informe para conservar la consistencia y la calidad del documento.
    </td>
     <td text-align="justify">AutoMatch fue diseñado con el objetivo de ofrecer una experiencia de usuario excepcional y diferenciarse de la competencia. Los estilos visuales seleccionados, junto con una cuidadosa organización de la información, garantizan no solo coherencia estética, sino también una navegación intuitiva y un acceso simplificado a las funciones clave para todos los usuarios, independientemente de su nivel de experiencia.<br>
 </tr>
 <br><br>
   <tr text-align="justify">
     <td><b>Reconoce la necesidad del aprendizaje permanente para el desempeño profesional y el desarrollo de proyectos en soluciones de software.</b></td>
-<td> Chávarri Zarzosa, Daniel Jhared<br> TP: <br> Durante el desarrollo del proyecto reconocí la importancia del aprendizaje permanente, ya que el área de soluciones de software evoluciona constantemente con nuevas herramientas, metodologías y lenguajes de programación. Identifiqué que para lograr un mejor desempeño profesional debo mantenerme actualizado mediante la investigación continua, el uso de recursos en línea y la práctica colaborativa. Este hábito de aprendizaje me permitirá adaptarme a los cambios tecnológicos y garantizar la calidad de los proyectos de software en los que participe.<br>
-        <br>Sihuar Ccotarma Ttito, Eduardo Eusebio <br> TP: <br> Durante la ejecución del proyecto entendí la importancia del aprendizaje constante, ya que el ámbito de las soluciones de software se transforma de manera continua con nuevas herramientas, enfoques y lenguajes de programación. Reconocí que, para lograr un desempeño profesional más sólido, resulta indispensable mantenerme actualizado a través de la investigación permanente, el uso de recursos digitales y el trabajo colaborativo. Este hábito de aprendizaje me permitirá responder a los cambios tecnológicos y garantizar la calidad en los proyectos de software en los que participe.<br>
-        <br>Vera Nuñez, Nicolas Alejandro <br> TP: <br> A lo largo del desarrollo del proyecto comprendí la relevancia del aprendizaje continuo, ya que el campo de las soluciones de software cambia constantemente con nuevas herramientas, metodologías y lenguajes de programación. Reconocí que, para alcanzar un mejor rendimiento profesional, es necesario mantenerme actualizado mediante la investigación permanente, el aprovechamiento de recursos digitales y la práctica en equipo. Este hábito de aprendizaje me permitirá adaptarme a los avances tecnológicos y asegurar la calidad de los proyectos de software en los que participe.
+<td> Chávarri Zarzosa, Daniel Jhared<br> TP: <br> Durante el trabajo parcial reconocí la relevancia del aprendizaje permanente en soluciones de software, un ámbito que evoluciona de forma constante en herramientas, metodologías y lenguajes. Identifiqué que, para un mejor desempeño profesional, debo mantenerme actualizado mediante investigación continua, uso de recursos en línea y práctica colaborativa. Este hábito me permitirá adaptarme a los cambios tecnológicos y garantizar la calidad de los proyectos de software en los que participe.<br>
+        <br>Sihuar Ccotarma Ttito, Eduardo Eusebio <br> TP: <br> Durante el trabajo parcial comprendí la importancia del aprendizaje constante en soluciones de software, un ámbito que cambia de forma continua con nuevas herramientas, enfoques y lenguajes. Reconocí que, para un desempeño profesional sólido, debo mantenerme actualizado mediante investigación permanente, uso de recursos digitales y trabajo colaborativo. Este hábito me permitirá responder a los cambios tecnológicos y asegurar la calidad de los proyectos en los que participe.<br>
+        <br>Vera Nuñez, Nicolas Alejandro <br> TP: <br> Durante el trabajo parcial asumí la relevancia del aprendizaje continuo en soluciones de software, un campo que evoluciona de forma constante con nuevas herramientas, metodologías y lenguajes. Reconocí que, para un mejor rendimiento profesional, debo mantenerme actualizado mediante investigación permanente, uso de recursos digitales y práctica en equipo. Este hábito me permitirá adaptarme a los avances tecnológicos y asegurar la calidad de los proyectos en los que participe.
     <td>AutoMatch fue diseñado con el objetivo de ofrecer una experiencia de usuario excepcional y destacar frente a la competencia. Los estilos visuales cuidadosamente seleccionados y la organización meticulosa de la información garantizan una coherencia visual sólida. Además, facilitan la navegación y el acceso a las funciones clave, haciendo que tanto usuarios con experiencia técnica como aquellos menos familiarizados con la tecnología puedan utilizar la plataforma de manera eficiente. <br>
 </tr>
 <br><br>
@@ -1650,7 +1650,7 @@ Presenta la vista arquitectónica, definiendo los contenedores principales: Fron
 
 **Diagrama de Componentes (C4 Model - Nivel 3)** <br>
 
-El diagrama de componentes de AutoMatch representa la estructura interna del sistema dentro de un contenedor backend basado en Spring Boot. Cada componente refleja un módulo funcional clave, independiente y con responsabilidades bien definidas, los cuales se comunican entre sí a través del API Gateway. Cada componente está asociado a su base de datos independiente (PostgreSQL o MongoDB), garantizando la autonomía de cada módulo y facilitando la escalabilidad. Además, el sistema interactúa con servicios externos como la Pasarela de Pagos y el Servicio de Notificaciones, asegurando integraciones críticas. En conjunto, este diagrama refleja cómo el sistema está desacoplado, modular y orientado a microservicios, siguiendo principios de escalabilidad, resiliencia y mantenibilidad. <br><br>
+El diagrama de componentes de AutoMatch representa la estructura interna del sistema dentro de un contenedor backend basado en Spring Boot. Cada componente refleja un módulo funcional clave, independiente y con responsabilidades bien definidas, los cuales se comunican entre sí a través del API Gateway. Cada componente está asociado a su base de datos independiente (PostgreSQL), garantizando la autonomía de cada módulo y facilitando la escalabilidad. Además, el sistema interactúa con servicios externos como la Pasarela de Pagos y el Servicio de Notificaciones, asegurando integraciones críticas. En conjunto, este diagrama refleja cómo el sistema está desacoplado, modular y orientado a microservicios, siguiendo principios de escalabilidad, resiliencia y mantenibilidad. <br><br>
 
 <table>
   <thead>
@@ -1661,40 +1661,113 @@ El diagrama de componentes de AutoMatch representa la estructura interna del sis
     </tr>
   </thead>
   <tbody>
+    <!-- Seguridad / Acceso -->
+    <tr>
+      <td><strong>API Gateway → IAM</strong></td>
+      <td><em>valida JWT</em></td>
+      <td>El gateway delega en <strong>IAM</strong> la validación de tokens/roles para proteger rutas de los microservicios.</td>
+    </tr>
+    <tr>
+      <td><strong>IAM/Perfiles → Vehículos</strong></td>
+      <td><em>propietario y permisos</em></td>
+      <td><strong>IAM/Perfiles</strong> aporta identidad/rol del usuario para asociar y autorizar acciones sobre vehículos/publicaciones.</td>
+    </tr>
+    <!-- Catálogo / Calidad / Promoción -->
+    <tr>
+      <td><strong>Vehículos → Certificación/Inspección</strong></td>
+      <td><em>solicita/verifica inspección</em></td>
+      <td>Al publicar o actualizar un vehículo, se registra y consulta su estado técnico en <strong>Certificación/Inspección</strong>.</td>
+    </tr>
+    <tr>
+      <td><strong>Certificación/Inspección → Notificaciones</strong></td>
+      <td><em>avisa resultado inspección</em></td>
+      <td>Cuando una inspección se completa o cambia de estado, se notifica a las partes involucradas.</td>
+    </tr>
+    <tr>
+      <td><strong>Promociones &amp; Avisos → Vehículos/Ventas</strong></td>
+      <td><em>aplica descuentos/destacados</em></td>
+      <td>Las reglas de <strong>Promociones</strong> se aplican sobre publicaciones y procesos de venta para visibilidad/precio.</td>
+    </tr>
+    <!-- Negociación / Venta / Pago -->
+    <tr>
+      <td><strong>Ventas → Pagos</strong></td>
+      <td><em>solicita cobro</em></td>
+      <td>Al aceptar una oferta o confirmar una orden, <strong>Ventas</strong> inicia el proceso de cobro en <strong>Pagos</strong>.</td>
+    </tr>
+    <tr>
+      <td><strong>Pagos → Ventas</strong></td>
+      <td><em>confirma estado de pago</em></td>
+      <td><strong>Pagos</strong> devuelve el resultado (validado, rechazado, reembolsado) para actualizar la transacción en <strong>Ventas</strong>.</td>
+    </tr>
     <tr>
       <td><strong>Pagos → Notificaciones</strong></td>
       <td><em>envía confirmación de pago</em></td>
-      <td>Cada vez que un pago se procesa o un reembolso es ejecutado, el componente de <strong>Pagos</strong> genera un evento que debe ser comunicado al usuario. <strong>Notificaciones</strong> transforma ese evento en correo, SMS o push.</td>
+      <td>Cada vez que se procesa un pago o reembolso, se emite una notificación al usuario.</td>
+    </tr>
+    <!-- Comunicación / Engagement -->
+    <tr>
+      <td><strong>Mensajería → Notificaciones</strong></td>
+      <td><em>alerta nuevos mensajes</em></td>
+      <td>Al producirse mensajes o lecturas en el chat, se generan avisos push/correo para informar en tiempo real.</td>
     </tr>
     <tr>
-      <td><strong>Notificaciones → Mensajería</strong></td>
-      <td><em>dispara alertas de mensajes</em></td>
-      <td>Cuando hay una interacción relevante en el chat, <strong>Notificaciones</strong> envía alertas push o correos para informar en tiempo real a los usuarios.</td>
+      <td><strong>Interacciones → Notificaciones</strong></td>
+      <td><em>avisa favoritos/seguimientos</em></td>
+      <td>Cuando un usuario guarda una publicación o sigue a un vendedor, se notifica al dueño del anuncio o se registra la alerta.</td>
     </tr>
+    <!-- Analítica / Soporte -->
     <tr>
-      <td><strong>Mensajería → Promociones &amp; Publicidad</strong></td>
-      <td><em>canal de comunicación</em></td>
-      <td><strong>Mensajería</strong> puede difundir promociones personalizadas durante la conversación, por ello se integra con <strong>Promociones &amp; Publicidad</strong>.</td>
-    </tr>
-    <tr>
-      <td><strong>Promociones &amp; Publicidad → Reportes &amp; Soporte</strong></td>
+      <td><strong>Promociones &amp; Avisos → Soporte &amp; Reportes</strong></td>
       <td><em>registra métricas de campañas</em></td>
-      <td>Cada campaña genera métricas (alcance, clics, interacciones) que <strong>Reportes &amp; Soporte</strong> consolida para análisis y auditoría.</td>
+      <td>Las campañas generan métricas (alcance/clics) que <strong>Soporte &amp; Reportes</strong> consolida para análisis y auditoría.</td>
     </tr>
     <tr>
-      <td><strong>Gestión de Usuarios → Gestión de Vehículos</strong></td>
-      <td><em>asocia usuario con autos</em></td>
-      <td>El <strong>Gestión de Usuarios</strong> garantiza la relación correcta entre usuarios (compradores/vendedores) y los vehículos publicados o comprados en <strong>Gestión de Vehículos</strong>.</td>
-    </tr>
-    <tr>
-      <td><strong>Gestión de Vehículos → Certificación / Inspección</strong></td>
-      <td><em>solicita/verifica inspección</em></td>
-      <td>Al publicar o poner en venta un vehículo, <strong>Gestión de Vehículos</strong> invoca a <strong>Certificación/Inspección</strong> para registrar inspecciones y validar el estado técnico.</td>
+      <td><strong>Ventas/Pagos → Soporte &amp; Reportes</strong></td>
+      <td><em>trazabilidad operativa</em></td>
+      <td>Estados de órdenes y cobros alimentan reportes de desempeño y atención a incidencias.</td>
     </tr>
   </tbody>
-</table> <br><br>
+</table>
 
-<img src="assets/Component Diagram.png"> <br><br><br>
+
+**Administración de Identidad y Acceso (IAM) Component**
+<img src="assets/IAM COMPONENT.svg"> <br><br><br>
+
+**Promociones y Avisos Component**
+<img src="assets/COMPONENTE DE PROMOCIONES Y AVISOS.svg"> <br><br><br>
+
+**Api Gateway Component**
+<img src="assets/API GATEWAY COMPONENT.svg"> <br><br><br>
+
+**Perfiles Component**
+<img src="assets/COMPONENTE DE SERVICIO DE PERFILES.svg"> <br><br><br>
+
+**Vehiculos Component**
+<img src="assets/COMPONENTE DE SERVICIO DE VEHICULOS.svg"> <br><br><br>
+
+**Mensajeria Component**
+<img src="assets/COMPONENTE DE SERVICIO DE MENSAJERIA.svg"> <br><br><br>
+
+**Soporte y Reportes Tecnicos Component**
+<img src="assets/COMPONENTE DE SOPORTE Y REPORTES TECNICOS.svg"> <br><br><br>
+
+**Pago Component**
+<img src="assets/COMPONENTE DE SERVICIO DE PAGOS.svg"> <br><br><br>
+
+**Venta Vehiculo Component**
+<img src="assets/COMPONENTE DE SERVICIO DE VENTA VEHICULO.svg"> <br><br><br>
+
+**Notificaciones Component**
+<img src="assets/COMPONENTE DE SERVICIO DE NOTIFICACION.svg"> <br><br><br>
+
+**Interacciones Component**
+<img src="assets/Content Diagram TP Fundamentos-Page-3.svg"> <br><br><br>
+
+**Certificación e inspección Component**
+<img src="assets/Content Diagram TP Fundamentos-Page-2.svg"> <br><br><br>
+
+
+
 
 ### 4.1.5. Relational/Non Relational Database Diagram 
 
