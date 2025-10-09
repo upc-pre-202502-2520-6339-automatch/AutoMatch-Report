@@ -1,0 +1,291 @@
+@startuml
+title AutoMatch - Entity Relationship Diagram (ER, corrected MVP)
+
+skinparam linetype ortho
+hide circle
+
+' =========================
+' Identidad / Perfiles / KYC
+' =========================
+entity "perfil" as perfil {
+  * id_usuario : UUID
+  --
+  nombre : string
+  rol_usuario : enum  ' BUYER | SELLER | TECH_WORKSHOP | ADMIN
+  telefono : string
+  correo : string
+  estado : enum       ' ACTIVE | INACTIVE
+  dni : string
+  ruc : string
+  id_taller : UUID <<FK, nullable>>
+}
+
+entity "iam" as iam {
+  * id_usuario : UUID <<PK, FK perfil.id_usuario>>
+  --
+  username : string
+  password_hash : string
+  ultimo_login : datetime
+  estado : enum
+}
+
+entity "verificacion_identidad" as kyc {
+  * id_verificacion : UUID
+  --
+  id_usuario : UUID <<FK perfil.id_usuario>>
+  estado : enum        ' PENDING | VERIFIED | REJECTED
+  fecha_envio : datetime
+  fecha_verificado : datetime <<nullable>>
+}
+
+entity "kyc_documento" as kyc_doc {
+  * id_doc : UUID
+  --
+  id_verificacion : UUID <<FK verificacion_identidad.id_verificacion>>
+  tipo : string        ' ID | DRIVER_LICENSE ...
+  front_url : string
+  back_url  : string
+  hash : string
+}
+
+perfil ||--|| iam : "1:1 auth"
+perfil ||--o{ kyc : "verificaciones"
+kyc ||--o{ kyc_doc : "documentos"
+
+' =========================
+' Talleres / Servicios / Certificación
+' =========================
+entity "taller" as taller {
+  * id_taller : UUID
+  --
+  nombre : string
+  ruc : string
+  direccion : string
+  telefono : string
+  rating : double
+}
+
+entity "servicio_certificacion" as serv_cert {
+  * id_servicio : UUID
+  --
+  id_taller : UUID <<FK taller.id_taller>>
+  nombre_servicio : string
+  tipo_servicio : enum
+  costo : numeric(12,2)
+}
+
+entity "cita_taller" as cita {
+  * id_cita : UUID
+  --
+  id_cliente : UUID <<FK perfil.id_usuario>>
+  id_taller  : UUID <<FK taller.id_taller>>
+  id_vehiculo : UUID <<FK vehiculo.id_vehiculo>>
+  fecha_cita : date
+  hora_cita  : time
+  estado : enum         ' requested | scheduled | done | canceled
+}
+
+entity "certificacion_vehiculo" as cert {
+  * id_certificacion : UUID
+  --
+  id_vehiculo : UUID <<FK vehiculo.id_vehiculo>>
+  id_servicio : UUID <<FK servicio_certificacion.id_servicio>>
+  id_taller   : UUID <<FK taller.id_taller>>
+  id_tecnico  : UUID <<FK perfil.id_usuario>>  ' perfil con rol TECH_WORKSHOP
+  fecha_emision : date
+  resultado : enum       ' PASS | FAIL | WITH_NOTES
+  score : int
+  hallazgos : text
+}
+
+taller ||--o{ serv_cert
+taller ||--o{ cita
+taller ||--o{ cert
+perfil ||--o{ cita : "cliente/tecnico"
+perfil |o--o{ taller : "miembro (opcional)"
+serv_cert ||--o{ cert
+
+' =========================
+' Catálogo: Vehículo / Publicación / Media / Favoritos
+' =========================
+entity "vehiculo" as vehiculo {
+  * id_vehiculo : UUID
+  --
+  placa : varchar <<UNIQUE>>
+  vin : varchar <<nullable, UNIQUE>>
+  marca : varchar
+  modelo : varchar
+  anio : int
+  kilometraje : int
+  color : varchar
+  estado : enum         ' LISTED | RESERVED | SOLD | OFF_MARKET
+}
+
+entity "vehiculo_specs" as vspecs {
+  * id_vehiculo : UUID <<PK, FK vehiculo.id_vehiculo>>
+  --
+  motor : string
+  transmision : string
+  combustible : string
+  puertas : int
+  asientos : int
+  extras : string
+}
+
+entity "publicacion" as pub {
+  * id_publicacion : UUID
+  --
+  id_vehiculo : UUID <<FK vehiculo.id_vehiculo>>
+  id_vendedor : UUID <<FK perfil.id_usuario>>
+  titulo : string
+  descripcion : text
+  precio : numeric(12,2)
+  estado : enum          ' DRAFT | PUBLISHED | PAUSED | SOLD | EXPIRED
+  fecha_publica : datetime <<nullable>>
+  fecha_expira  : datetime <<nullable>>
+}
+
+entity "media_asset" as media {
+  * id_media : UUID
+  --
+  id_publicacion : UUID <<FK publicacion.id_publicacion>>
+  tipo : varchar         ' photo | video
+  uri  : text
+  es_portada : boolean
+}
+
+entity "favorito" as fav {
+  * id_favorito : UUID
+  --
+  id_publicacion : UUID <<FK publicacion.id_publicacion>>
+  id_perfil : UUID <<FK perfil.id_usuario>>
+  fecha_agregado : datetime
+}
+
+vehiculo ||--|| vspecs
+vehiculo ||--o{ pub
+perfil ||--o{ pub : "vende"
+pub ||--o{ media
+perfil ||--o{ fav
+pub ||--o{ fav
+
+' =========================
+' Conversaciones / Mensajería
+' =========================
+entity "conversacion" as conv {
+  * id_conversacion : UUID
+  --
+  id_publicacion : UUID <<FK publicacion.id_publicacion>>
+  abierta : boolean
+  fecha_creado : datetime
+}
+
+entity "conversacion_participante" as conv_p {
+  * id_conversacion : UUID <<FK conversacion.id_conversacion>>
+  * id_perfil : UUID <<FK perfil.id_usuario>>
+}
+
+entity "mensaje" as msg {
+  * id_mensaje : UUID
+  --
+  id_conversacion : UUID <<FK conversacion.id_conversacion>>
+  id_emisor : UUID <<FK perfil.id_usuario>>
+  contenido : text
+  fecha_mensaje : datetime
+}
+
+pub ||--o{ conv
+conv ||--o{ conv_p
+conv ||--o{ msg
+perfil ||--o{ msg : "envía"
+
+' =========================
+' Ofertas / Transacciones / Pagos / Escrow
+' =========================
+entity "oferta" as oferta {
+  * id_oferta : UUID
+  --
+  id_publicacion : UUID <<FK publicacion.id_publicacion>>
+  id_comprador : UUID <<FK perfil.id_usuario>>
+  precio_ofertado : numeric(12,2)
+  mensaje : text
+  fecha_creacion : datetime
+  fecha_expira : datetime <<nullable>>
+  estado : enum         ' propuesta | aceptada | rechazada | expirada
+}
+
+entity "transaccion" as trx {
+  * id_transaccion : UUID
+  --
+  id_oferta : UUID <<FK oferta.id_oferta>>
+  id_publicacion : UUID <<FK publicacion.id_publicacion>>
+  id_vendedor : UUID <<FK perfil.id_usuario>>
+  id_comprador : UUID <<FK perfil.id_usuario>>
+  fecha_transac : datetime
+  estado : enum          ' initiated | paid | completed | canceled
+}
+
+entity "pago" as pago {
+  * id_pago : UUID
+  --
+  id_transaccion : UUID <<FK transaccion.id_transaccion>>
+  monto : numeric(12,2)
+  metodo_pago : varchar
+  estado : enum        ' PENDING | VALIDATING | CONFIRMED | REJECTED | REFUNDED
+  fecha_creado : datetime
+  fecha_validado : datetime <<nullable>>
+}
+
+entity "comprobante_pago" as receipt {
+  * id_comprobante : UUID
+  --
+  id_pago : UUID <<FK pago.id_pago>>
+  banco : varchar
+  codigo_operacion : varchar
+  url_archivo : text
+  hash : varchar
+  fecha_subida : datetime
+}
+
+entity "escrow" as escrow {
+  * id_escrow : UUID
+  --
+  id_transaccion : UUID <<FK transaccion.id_transaccion>>
+  monto_retenido : numeric(12,2)
+  fecha_retenido : datetime <<nullable>>
+  fecha_liberado : datetime <<nullable>>
+  liberado : boolean
+}
+
+pub ||--o{ oferta
+perfil ||--o{ oferta : "compra"
+oferta ||--|| trx : "oferta aceptada"
+pub ||--o{ trx : "histórico (máx 1 recomendado)"
+perfil ||--o{ trx : "vende/compra"
+trx ||--o{ pago
+pago ||--o{ receipt
+trx |o--|| escrow : "0..1 escrow"
+
+' =========================
+' Promociones (normalizadas)
+' =========================
+entity "promocion" as promo {
+  * id_promocion : UUID
+  --
+  nombre : string
+  descripcion : text
+  descuento : numeric(5,2)
+  empieza : datetime
+  termina : datetime
+  estado : enum        ' draft | active | expired
+}
+
+entity "promocion_publicacion" as promo_pub {
+  * id_promocion : UUID <<FK promocion.id_promocion>>
+  * id_publicacion : UUID <<FK publicacion.id_publicacion>>
+}
+
+promo ||--o{ promo_pub
+pub ||--o{ promo_pub
+
+@enduml

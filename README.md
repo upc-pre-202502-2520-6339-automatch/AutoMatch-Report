@@ -1762,56 +1762,9 @@ Cada entidad se encuentra normalizada y vinculada mediante claves foráneas que 
   </tbody>
 </table> <br><br><br>
 
-<img src="assets/AutoMatch Database Diagram.PNG"> <br><br><br>
+<img src="assets/AutoMatch Database Diagram.png"> <br><br><br>
 
-**Descripción de la base de datos no relacional** <br>
-
-La base de datos No Relacional de AutoMatch fue implementada en MongoDB, estructurada en colecciones que representan entidades clave del sistema, como Users, Vehicles, Payments, Certifications, entre otras. Este modelo basado en documentos JSON ofrece flexibilidad y escalabilidad, permitiendo almacenar información heterogénea y evolucionar fácilmente el esquema según las necesidades de la plataforma. <br><br>
-
-<table>
-  <tr>
-    <th>Colección</th>
-    <th>Campos principales</th>
-    <th>Descripción</th>
-  </tr>
-  <tr>
-    <td>Users</td>
-    <td>name, email, password, role, favorites</td>
-    <td>Almacena información de los usuarios (compradores, vendedores, admins, técnicos).</td>
-  </tr>
-  <tr>
-    <td>Vehicles</td>
-    <td>brand, model, year, status, ownerId, certifications</td>
-    <td>Registra los vehículos publicados en la plataforma y sus certificaciones.</td>
-  </tr>
-  <tr>
-    <td>Payments</td>
-    <td>amount, status, method, date, buyerId, vehicleId</td>
-    <td>Gestiona pagos realizados por los compradores hacia los vendedores.</td>
-  </tr>
-  <tr>
-    <td>Certifications</td>
-    <td>type, date, result, vehicleId, inspectorId</td>
-    <td>Documenta inspecciones técnicas y certificaciones emitidas por especialistas.</td>
-  </tr>
-  <tr>
-    <td>Reports</td>
-    <td>message, date, status, vehicleId</td>
-    <td>Guarda reportes técnicos asociados a vehículos.</td>
-  </tr>
-  <tr>
-    <td>Notifications</td>
-    <td>message, date, status, userId</td>
-    <td>Registra notificaciones enviadas a los usuarios.</td>
-  </tr>
-  <tr>
-    <td>AuditLog</td>
-    <td>action, timestamp, userId</td>
-    <td>Almacena trazabilidad y acciones realizadas por los usuarios.</td>
-  </tr>
-</table> <br><br>
-
-<img src="assets/AutoMatch-DB-No-Relational.PNG"> <br><br><br>
+[Ver diagrama](https://img.plantuml.biz/plantuml/png/hLdDSjis4Bvxnk-0yILsnbRgplJYIJDHBAfXRSkg93lDYGE1i8M695WGL9p4VPWyG4vv1BzO5pya0Ogob8npY8354iJkVlljWdvTI2nacIQxEvB9XA9-AVa5bcI1Zb2GWUmJcj04IyQpOi5oD63uLk0KxGUJGqIu49H86gEBw_71xixkJl61PJbM2WdBgFoKKyI5NF3TdGMBAI9Ca8GgnMVeztN_r68OKtXvZ6Fq0esfk649BM1uzlvqmwFKd7alrm_j8LmWCqHVTdSGUevO79L5YGNZw0HTNOK39JuwKlzdF9qB2k922fRTAf7WYQDEip95w1bwS_K-cA1xD0tEp_LW5fo-ZTvTJiwcRo_7CEyFBiAHUbxIXDxmZ7kRQhVv8WfnY9jNw7_FKFzq5bu7i5yuCaEb6cVCFs99l3aOA76IK67jGozV3iyEKLOc2PudzDMhtPt_L0GgJp6SQZV1xreVmHvZs6DuPftPQpJKVfK3ouAA3AU-2tDS51-vYAC5BXRUIfb8bl8euRSiWuKOIme2kkAFre6NLB0RHZ01J4Qi0egsuSCdujZWAgu4kyl6zVPrnGS2D0v6Wt3q1qJeEfY4mp0Om70I_1cSpWBzhXjA5ZYYsLA_nhNGh5H7ZDrbECdQQ865KSn9cOA0LpOhYMEtcdMOs-4EOtEtGtkjHumZ9CiRv3QE29NXWmb0T1ATXwV1Q1gWNg-d3HKyar4f4Y_sSqm-QA4dRK54MsxJz_x-wEZ-NgFq1EqTdnmZNCh5dhVElsW4dFWOeGLeANcZObsqLtjIgMmafPbEAqr4KogM33PNurCgf7tPm_TiItuoAQe3QBErYP-Nle_JKoltOmPyREFRI3j9I02dGmG1TRoSAqxsO5PO-oBI6CSpVLorfCNEYIlrBjYjaf6rk5Sl6cWP-zoz71C0TkwAeGL5fOLKSvX2nCd-yQ-7lnwqR25CuiZnjvexPzVJZdEJXC4ET1jsQApSmaoTLWj6oeItij08Uuw2US9GXJsd8WcTAbnO6GWxQHCrwIdeloMiGQ6-HmLPqBXCz3Y6x80VWZC268dRZdDZNv_9-D2FlwVPpJq_PF4gfCmJtR3iEUeh0Tak8fAIZ16EDaLRETCI3W5BeJtmQx_3-IahZ3EgY05pGCNhAFFZ_dGAKHZsmtFuUHVEtaQZoramLGyLq2me3B9C6eA4kl3v5dW7Waxlf8sODTOIN9sXxGK5bnMPrlD9r49jpwR02-iTXsovrgjJUozb59ANetsUguZWv02K6wRmthMHPq-nVFWANG4_GTTqyV1D0mVwGE2fYcLXUa5ZXk5tY9TSCA3mBPdNmt6DIxThyA3Qm3XFC55kMM810HQ0aQjH-DTLO42qr3rCirPLy4FaQgMmxkoXHJoc-csE36SQ-3Re7rZ2Koe5_iT10k495_vJwxB_F9pER6So3IRNUZYzF5S_byDXTD6Vd0MpbIRBU24gSaeAuoizNE-ffabSdzZ6aocN-kmElmkS5NN6kAroEYyBoS2HVbDP0fHmqRW35qpNyKO2sI6qXjTDrFU32aosgi7SiSnPVHesMz8ifZ4Nc_Z5r3ffzdRgEYs8OBazZqbyS08KUzPH_TOX0Q0mcFI7CuZx-EeDeEAjXiAuVpLrCH7yFGudRljglR6-GwqvxovdGXUaRLhPL2Lm1BS3AdK8zDm9Wfbtk7yrEjQVZRpdgtczQvMZZLVo1G0IB5z2yylrpKGmv3YQ5b4ErrWSg-FCEKyepbh6t5WMqfR0nB6ZMdfAKvJCKF4MW3B1WNixlVKl6jQ66iwsnpQ9tf83VSCfsfL2fOrkjm7UgZp0rAxewBNLmHMUafvlhWSyWtw-iCsyflwi038K3z_mbgHFd2rC0mC2ju5nrfyoJdZE556viAdxEK4xez5rv2Z7qEyGbcCen_Nve_nn2ymHtOLUIz4SylcFmAcLmZeG9dsBMozvzKfdO_tp9mMXwgksur5uNDACQHzNcMnStnokvNi7ckhbkpiQ9euaodqP6Dt6kF83f0JS-G6UsrmhBszCBNk1PgeAObBZV8nlzGqp0FRd7xU4EjVRwP2OeHCLAtXQ8e8QdGkyPN4pDSiU9EuiNarq_AYfX25DI-r_IB6bvv4IjQuxoWNFrUK8Gm70XEQQvk-XMuTjFvknsJp6BVJB9bpc8Y_kt5jyizhbS2yKncL6rAiN6wh_-U3yIEFnex4qdhTsFlO1p-r0MCOam-OgccEcVjHB4sf4QwwYEMI2wTDWu3PgQjhrqM75-VO2sCXxlfhjpu4pre1IyfXNxzlKT7jV1llduQ0_CvFJoz4md5nutmdrS7Wr6hWzLqTrgByPuaHzdzlsYw4EAP-hoX7LRWHqKvPxL_X6hPCV6aTRJ82WPnUCx-1Pqd8EuJ6xXMm705NeTLPBaKHgnfOkHTjlW8wUCRievop6gvnTsKarIMhhpD0npWgU6YYHe7M5MK6CERMZiQ5vJjYSYaV3Yf2ZuxUXJk4otD6kIZNT63oemcH5jkbJv7LILO-Q2FsUpkeiM24VlWlrlMG_VVXwXuuLdk2AcYbO7gnyaxMFQIfwKRzUIQik4Z043oc8MOd5fzNY-eHr4FT-wVMExNIR0ZiMFEMsgEvdNAIGG8hPYuDj_vXKRM0eICrS3gfMj_bYstsJKzAI-jJpMtMNItD6F-CM5KWgKfQrfMl8A1RuHkho9jcILWLjbMGhGwALsx5QYLftv9RPbXOgQSzLSVlCdwfb1kJQyHLcgYDv27Makpkl0N3wJvl_0m00)
 
 
 ### 4.1.6. Design Patterns 
