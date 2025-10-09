@@ -1712,8 +1712,9 @@ El diagrama de componentes de AutoMatch representa la estructura interna del sis
 
 **Descripción de la base de datos relacional** <br>
 
-La base de datos AutoMatch está diseñada bajo un modelo relacional en PostgresSQL, estructurando la información de usuarios, vehículos, certificaciones, reportes técnicos, pagos, notificaciones y auditorías.
-Cada entidad se encuentra normalizada y vinculada mediante claves foráneas que garantizan la integridad referencial, lo que permite manejar de manera segura las transacciones y la trazabilidad de cada operación dentro de la plataforma de compra y venta de autos usados. <br><br>
+La base de datos de AutoMatch, implementada en PostgreSQL, adopta un modelo relacional normalizado que garantiza integridad, coherencia y escalabilidad. La información se organiza en dominios: Identidad y Acceso (Perfil, Cuenta IAM, Verificación y Documentos KYC); Catálogo (Publicación que compone Vehículo, Especificaciones y RecursosMultimedia, además de Favoritos); Negociación y Venta (Oferta y Transacción, con Pago, Comprobante de Pago y Custodia/escrow); Talleres e Inspecciones (Taller, Servicio de Certificación, Solicitud de Inspección e Informe de Inspección); Comunicación (Conversación y Mensaje); Notificaciones; Monetización (Plan y Suscripción); Marketing (Promoción y su relación con Publicación); y Recomendación/Analítica (Perfil de Preferencias, Recomendación y Reporte de Vendedor).
+
+Las entidades se vinculan mediante claves foráneas y restricciones de integridad referencial, lo que permite trazabilidad completa del ciclo de negocio (desde la publicación y la oferta hasta el pago validado y la liberación en custodia), reduce la duplicidad de datos y soporta de forma segura las operaciones de compra–venta dentro de la plataforma.<br><br>
 
 <table>
   <thead>
