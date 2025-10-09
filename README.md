@@ -1737,6 +1737,7 @@ El diagrama de componentes de AutoMatch representa la estructura interna del sis
 <img src="assets/COMPONENTE DE PROMOCIONES Y AVISOS.svg"> <br><br><br>
 
 **Api Gateway Component**
+
 <img src="assets/API GATEWAY COMPONENT.svg"> <br><br><br>
 
 **Perfiles Component**
