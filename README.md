@@ -1916,7 +1916,7 @@ En el diseño de AutoMatch se aplican diversos patrones de diseño que permiten 
 </table> <br><br>
 
 ### 4.1.7. Tactics
-Las tácticas arquitectónicas definidas para AutoMatch se orientan a cumplir con los atributos de calidad no funcionales, tales como disponibilidad, modificabilidad, rendimiento, seguridad y usabilidad. Cada táctica refuerza un aspecto clave para garantizar la confiabilidad y eficiencia del sistema. <br>
+Las tácticas arquitectónicas se han redefinido de acuerdo con la implementación actual basada en microservicios Spring Boot, Kafka y PostgreSQL, reforzando los atributos de calidad no funcionales: disponibilidad, modificabilidad, rendimiento, seguridad y usabilidad. <br>
 
 <table>
   <tr>
@@ -1926,37 +1926,39 @@ Las tácticas arquitectónicas definidas para AutoMatch se orientan a cumplir co
   </tr>
   <tr>
     <td>Disponibilidad</td>
-    <td>Garantizar operación continua del sistema.</td>
-    <td>Uso de balanceadores de carga y replicación de instancias para asegurar alta disponibilidad.</td>
+    <td>Garantizar operación continua del sistema y mínima interrupción del servicio</td>
+    <td>Uso de API Gateway con balanceo de carga entre instancias de microservicios (Spring Cloud Gateway). Replicación de bases PostgreSQL y comunicación asíncrona con Kafka, evitando bloqueos cuando un servicio falla (p. ej., Notificaciones o Pagos)</td>
   </tr>
   <tr>
     <td>Modificabilidad</td>
-    <td>Facilitar cambios y evolución del sistema.</td>
-    <td>Código desacoplado, uso de interfaces y versionamiento de APIs.</td>
+    <td>Facilitar la evolución y mantenimiento de los servicios</td>
+    <td>Diseño desacoplado por dominios (Vehículos, Pagos, Perfiles, Notificaciones, Promociones, Soporte). Uso de interfaces y contratos REST bien definidos, junto con versionamiento de APIs y inyección de dependencias (Spring IoC)</td>
   </tr>
   <tr>
     <td>Performance</td>
-    <td>Optimizar tiempos de respuesta y eficiencia.</td>
-    <td>Aplicación de caché en consultas frecuentes y colas asíncronas para tareas pesadas.</td>
+    <td>Optimizar el tiempo de respuesta y eficiencia del sistema</td>
+    <td>Implementación de caché en consultas frecuentes (p. ej., búsqueda de vehículos y reportes). Uso de Kafka para procesar eventos asíncronos (notificaciones, pagos, actualizaciones), mejorando el throughput y evitando bloqueos sincrónicos</td>
   </tr>
   <tr>
     <td>Seguridad</td>
-    <td>Proteger la información y transacciones.</td>
-    <td>Cifrado de datos en tránsito y reposo, validación de entradas y autenticación con JWT.</td>
+    <td>Proteger las transacciones, identidades y accesos</td>
+    <td>Integración del Servicio IAM con JWT y validación en el API Gateway. Cifrado de datos sensibles en tránsito (HTTPS) y reposo (PostgreSQL + Encrypted Columns). Uso de Spring Security en cada microservicio con roles bien definidos</td>
   </tr>
   <tr>
     <td>Usabilidad</td>
-    <td>Mejorar la experiencia del usuario final.</td>
-    <td>Diseños consistentes, interfaz intuitiva y procesos simplificados.</td>
+    <td>Garantizar una experiencia fluida y consistente para todos los usuarios</td>
+    <td>Interfaz unificada (SPA y App Mobile) que consume endpoints del Gateway. Gestión centralizada de errores (ControllerAdvice) y respuestas JSON unificadas. Notificaciones en tiempo real mediante Kafka + Twilio API para compradores, vendedores y administradores</td>
   </tr>
 </table> <br><br>
 
 ## 4.2. Architectural Drivers
-Los drivers arquitectónicos son los factores críticos que influyen en el diseño de la solución. Incluyen los propósitos principales de la arquitectura, la funcionalidad esperada, los atributos de calidad a garantizar, las restricciones técnicas y las preocupaciones arquitectónicas que deben ser atendidas. Estos drivers aseguran que la arquitectura no solo cumpla con los requisitos funcionales, sino que también sea robusta, segura y escalable. <br>
+Los drivers arquitectónicos son los factores críticos que orientan las decisiones de diseño de la arquitectura de AutoMatch.
+Estos definen el propósito principal, las funcionalidades clave, los atributos de calidad, las restricciones y las preocupaciones que garantizan una plataforma segura, modular, escalable y orientada a microservicios.
+Su correcta aplicación asegura la sostenibilidad técnica y la alineación con los objetivos de negocio.<br>
 
 ### 4.1.8. Design Purpose
 
-Garantizar una arquitectura modular, escalable y mantenible que soporte el crecimiento del sistema, minimice riesgos de integración y maximice la satisfacción del usuario final.
+Garantizar una arquitectura distribuida, resiliente y mantenible, basada en microservicios independientes que permitan el escalamiento horizontal, la integración ágil de nuevas funcionalidades y la disponibilidad continua de servicios críticos (pagos, notificaciones, certificaciones e identidad).
 
 ### 4.1.9. Primary Functionality (Primary User Stories)
 
