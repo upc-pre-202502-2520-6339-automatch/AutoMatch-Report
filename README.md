@@ -30,32 +30,7 @@
     <strong>Sihuar Ccotarma Ttito, Eduardo Eusebio </strong><br>
     <strong>Vera Nuñez, Nicolas Alejandro</strong>
 </p>
-
-
-
-
-
-# Registro de Versiones del Informe
-
-|Versión|Fecha|Autor|Descripción de modificación|
-|-------|-----|-----|---------------------------|
-|V0.1|03/09/2025|Daniel y Eduardo|Capítulo 1|
-|V0.2|03/09/2025|Nicolas| Capitulo 2|
-|V0.3|03/09/2025|Daniel<br>Eduardo<br>Nicolas|Capítulo 3|
-
-
-**Project Report Collaboration Insights**
-URL del repositorio de GitHub de la organización: [https://github.com/upc-pre-202502-2520-6339-automatch](https://github.com/upc-pre-202502-2520-6339-automatch)
-
-Avance 1
-
-Para el desarrollo del Avance 1, se optó por dividir el trabajo de la siguiente forma:
-
-| Integrante                          | Actvidades Asignadas                                                                                                                                                |
-|-------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Chávarri Zarzosa, Daniel Jhared  | - Capitulo 1 <br> - Capitulo 3
-| Sihuar Ccotarma Ttito, Eduardo Eusebio     | - Capitulo 1 <br> - Capítulo 3                                                                                                     |
-| Vera Nuñez, Nicolas Alejandro                 | - Capitulo 2 <br> - Capítulo 3 <br>                                                                                                                                                                                                                                         
+                                                                                                                                                                                                                                 
 # Contenido
 ## Tabla de Contenidos
 ### [Registro de versiones del informe](#registro-de-versiones-del-informe)
