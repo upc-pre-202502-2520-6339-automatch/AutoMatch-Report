@@ -1962,7 +1962,7 @@ Garantizar una arquitectura distribuida, resiliente y mantenible, basada en micr
 
 ### 4.1.9. Primary Functionality (Primary User Stories)
 
-Las historias de usuario representan la funcionalidad esencial que el sistema debe ofrecer para cumplir con los objetivos principales. Estas describen las interacciones clave entre los usuarios y la plataforma, asegurando que las necesidades del negocio y del cliente estén alineadas con el diseño de la arquitectura. <br>
+Las historias de usuario clave representan el núcleo funcional de AutoMatch, alineadas con los flujos principales del negocio: compra, venta, certificación y pago de vehículos. <br>
 
 <table>
   <tr>
@@ -1970,30 +1970,43 @@ Las historias de usuario representan la funcionalidad esencial que el sistema de
     <th>Descripción</th>
   </tr>
   <tr>
-    <td>Registro de usuarios</td>
-    <td>Como comprador o vendedor quiero registrarme en el sistema para poder acceder a la plataforma.</td>
+    <td>Registro y autenticación de usuarios</td>
+    <td>Como comprador o vendedor quiero registrarme y validar mi identidad mediante el Servicio IAM para acceder de forma segura a la plataforma.</td>
   </tr>
   <tr>
-    <td>Publicar vehículo</td>
-    <td>Como vendedor quiero publicar mi auto con fotos y detalles para llegar a posibles compradores.</td>
+    <td>Publicación de vehículos</td>
+    <td>Como vendedor quiero registrar y publicar mis vehículos para que sean visibles a compradores potenciales en el sistema.</td>
   </tr>
   <tr>
-    <td>Búsqueda y filtros</td>
+    <td>Búsqueda y comparación de autos</td>
     <td>Como comprador quiero buscar vehículos usando filtros (marca, modelo, año, precio) para encontrar opciones adecuadas.</td>
   </tr>
   <tr>
-    <td>Pagos seguros</td>
-    <td>Como comprador quiero realizar el pago del vehículo de forma segura para garantizar la validez de la transacción.</td>
+    <td>Certificación e inspección</td>
+    <td>Como vendedor quiero solicitar una inspección y certificación del vehículo para garantizar confianza al comprador.</td>
   </tr>
   <tr>
-    <td>Notificaciones</td>
-    <td>Como usuario quiero recibir alertas (correo, app) sobre el estado de mis transacciones o mensajes.</td>
+    <td>Pagos seguros y reembolsos</td>
+    <td>Como comprador quiero realizar pagos de forma segura y, si es necesario, solicitar reembolsos gestionados por el Servicio de Pagos.</td>
   </tr>
+   <tr>
+   <td>Notificaciones automáticas</td>
+   <td>Como vendedor o comprador quiero recibir notificaciones sobre nuevos listados, pagos completados o mensajes, gestionadas por Kafka y Twilio API.</td>
+  </tr>
+   <tr>
+   <td>Gestión de soporte</td>
+   <td>Como usuario quiero registrar reclamos o consultas técnicas y recibir seguimiento por parte del administrador o taller técnico.</td>
+  </tr>
+ <tr>
+   <td>Promociones y avisos</td>
+   <td>Como comprador quiero acceder a descuentos o avisos de promociones publicadas en la plataforma.</td>
+</tr>
 </table> <br><br>
 
 ### 4.1.10. Quality Attribute Scenarios
 
-Los escenarios de atributos de calidad permiten medir y validar propiedades no funcionales del sistema, como disponibilidad, rendimiento o seguridad. Estos escenarios sirven como criterios para evaluar el comportamiento de la arquitectura bajo diferentes condiciones. <br>
+Los atributos de calidad permiten evaluar el comportamiento del sistema bajo condiciones reales.
+Estos escenarios reflejan cómo los componentes de AutoMatch (API Gateway, IAM, Pagos, Kafka, etc.) soportan disponibilidad, rendimiento y seguridad en entornos de carga. <br>
 
 <table>
   <tr>
@@ -2007,64 +2020,104 @@ Los escenarios de atributos de calidad permiten medir y validar propiedades no f
   </tr>
   <tr>
     <td>Disponibilidad</td>
-    <td>Cliente</td>
-    <td>Solicitud de servicio durante horario de alta demanda</td>
-    <td>Sistema en carga máxima</td>
-    <td>API de pagos</td>
-    <td>El sistema responde en menos de 2 segundos</td>
+    <td>Comprador/Vendedor</td>
+    <td>Realiza operaciones simultáneas (pagos, listados, búsquedas)</td>
+    <td>Sistema en hora pico</td>
+    <td>Microservicios desplegados en GCP</td>
+    <td>La arquitectura se mantiene operativa con balanceo y tolerancia a fallos</td>
     <td>99.9% uptime</td>
   </tr>
-</table> <br><br><br>
+    <td>Rendimiento</td> 
+    <td>Usuario final</td> 
+    <td>Consulta o publicación de vehículos</td> 
+    <td>Alta concurrencia</td> <td>Servicio de Vehículos / Gateway</td> 
+    <td>Responde en menos de 2 segundos</td> 
+    <td>Tiempos de respuesta &lt; 2000ms</td> 
+</tr> 
+<tr> <td>Seguridad</td> 
+<td>IAM Service</td> 
+<td>Valida tokens JWT y permisos</td> 
+<td>Durante autenticación o acceso a microservicios</td> 
+<td>API Gateway / IAM</td> 
+<td>El acceso se concede solo a usuarios verificados</td> 
+<td>100% cumplimiento en autenticación y autorización</td> 
+</tr> 
+<tr> 
+<td>Escalabilidad</td> 
+<td>Administrador</td> 
+<td>Incremento repentino de usuarios concurrentes</td> 
+<td>Microservicios distribuidos en contenedores</td> <td>Servicios en Kubernetes / GCP</td> 
+<td>Se agregan nuevas instancias sin afectar el rendimiento</td>
+<td>Escalamiento horizontal &lt; 60s</td> </tr> 
+<tr> 
+<td>Mantenibilidad</td> 
+<td>Equipo de desarrollo</td> 
+<td>Se implementa una nueva versión del Servicio de Pagos</td> 
+<td>Entorno en producción</td> 
+<td>Microservicio desacoplado</td> 
+<td>Se despliega sin afectar otros servicios</td> 
+<td>Tiempo de despliegue &lt; 10 minutos</td> 
+</tr> 
+</table> <br>
 
 ### 4.1.11. Constraints
 
-Las restricciones arquitectónicas son decisiones impuestas por requerimientos externos o limitaciones técnicas que deben cumplirse obligatoriamente. Definen el marco dentro del cual se diseña y construye el sistema. <br>
+Las restricciones definen el marco técnico y operativo en el que AutoMatch debe funcionar, asegurando compatibilidad, estandarización y cumplimiento de plazos. <br>
 
-<table>
-  <tr>
-    <th>Restricción</th>
-    <th>Descripción</th>
-  </tr>
-  <tr>
-    <td>Base de datos</td>
-    <td>Uso obligatorio de PostgreSQL como base de datos relacional.</td>
-  </tr>
-  <tr>
-    <td>Infraestructura</td>
-    <td>Despliegue obligatorio en Google Cloud.</td>
-  </tr>
-  <tr>
-    <td>Tiempo</td>
-    <td>Tiempo máximo de entrega: 16 semanas.</td>
-  </tr>
-</table> <br><br>
-
+<table> 
+    <tr> 
+    <th>Restricción</th> 
+    <th>Descripción</th> 
+    </tr> 
+    <tr> 
+    <td>Base de datos</td> 
+    <td>Uso obligatorio de <b>PostgreSQL</b> como sistema de gestión relacional en todos los microservicios.</td> 
+    </tr> 
+    <tr> 
+    <td>Mensajería</td> 
+    <td>Integración obligatoria con <b>Apache Kafka</b> para manejo de eventos asíncronos (notificaciones, pagos, certificaciones).</td> 
+    </tr> 
+    <tr> <td>Seguridad</td> 
+    <td>Autenticación y autorización basadas en <b>JWT</b> mediante el microservicio <b>IAM</b>.</td> 
+    </tr> 
+    <tr> <td>Infraestructura</td> 
+    <td>Despliegue y orquestación en <b>Google Cloud Platform</b> con contenedores administrados por Kubernetes.</td> 
+    </tr> 
+    <tr> <td>Integración</td> 
+    <td>Uso de <b>Spring Boot + REST API</b> como marco común de comunicación entre microservicios.</td> 
+    </tr> </table> <br>
+    
 ### 4.1.12. Architectural Concerns
 
-Las preocupaciones arquitectónicas reflejan los aspectos críticos que deben abordarse para garantizar que el sistema cumpla con los objetivos de negocio. Involucran seguridad, escalabilidad, interoperabilidad y costos, asegurando sostenibilidad en el tiempo. <br>
+Las preocupaciones arquitectónicas abordan los desafíos técnicos y de negocio que deben ser atendidos para asegurar la sostenibilidad y calidad del sistema. <br>
 
-<table>
-  <tr>
-    <th>Preocupación</th>
-    <th>Descripción</th>
-  </tr>
-  <tr>
-    <td>Seguridad</td>
-    <td>Protección de datos sensibles mediante cifrado y control de accesos.</td>
-  </tr>
-  <tr>
-    <td>Escalabilidad</td>
-    <td>Capacidad de manejar picos de usuarios concurrentes sin degradar el servicio.</td>
-  </tr>
-  <tr>
-    <td>Interoperabilidad</td>
-    <td>Compatibilidad con APIs de terceros como pasarelas de pago y servicios externos.</td>
-  </tr>
-  <tr>
-    <td>Costos</td>
-    <td>Control del gasto en infraestructura cloud manteniendo alta disponibilidad.</td>
-  </tr>
-</table> <br><br>
+<table> 
+    <tr> 
+    <th>Preocupación</th> 
+    <th>Descripción</th> 
+    </tr> 
+    <tr> 
+    <td>Seguridad</td> 
+    <td>Protección de datos de usuarios y transacciones con autenticación JWT, cifrado HTTPS y control de roles.</td> 
+    </tr> 
+    <tr> <td>Escalabilidad</td> 
+    <td>Soporte a picos de tráfico mediante balanceadores y despliegue de microservicios en clústeres replicados.</td> 
+    </tr> 
+    <tr> <td>Interoperabilidad</td> 
+    <td>Integración con servicios externos como Stripe (pagos), Twilio (notificaciones), RENIEC (identidad) y SUNAT (facturación).</td> 
+    </tr> 
+    <tr> <td>Observabilidad</td> 
+    <td>Registro centralizado de logs y métricas con monitoreo de salud de servicios a través de Prometheus y Grafana.</td> 
+    </tr> 
+    <tr> <td>Mantenibilidad</td> 
+    <td>Arquitectura desacoplada con control de versiones, pruebas unitarias y despliegue continuo (CI/CD) para reducir impacto en actualizaciones.</td> 
+    </tr> 
+    <tr> 
+    <td>Costos</td> 
+    <td>Optimización de recursos en la nube mediante escalado automático y políticas de uso bajo demanda.
+    </td> 
+    </tr> 
+</table> <br>
 
 ## 4.3. ADD Iterations
 
