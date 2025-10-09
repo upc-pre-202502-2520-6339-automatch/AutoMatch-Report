@@ -1540,7 +1540,7 @@ El diagrama de contexto representa la visión de alto nivel (C4 – Nivel 1) del
   </tbody>
 </table> <br><br>
 
-<img src="assets/Context Diagram.png"> <br><br><br>
+<img src="assets/Context Diagram.svg"> <br><br><br>
 
 ### 4.1.4. Approach driven ViewPoints Diagrams
 
