@@ -3555,11 +3555,16 @@ Se realizaron pruebas funcionales básicas utilizando Swagger UI, validando el c
 Se verificaron: creación de pago, listado de pagos y consulta de pago por ID.
 Las pruebas comprobaron respuesta HTTP 200 y persistencia correcta en base de datos.
 
+<img src="assets/post-payment.PNG"> <br><br>
+<img src="assets/response-payment.PNG"> <br><br>
+
 #### 5.2.2.4. Execution Evidence for Sprint Review
 
 El microservicio se ejecutó correctamente a través del comando **docker-compose up**.
 El contenedor de pagos se levantó sin errores, conectándose a PostgreSQL y exponiendo sus endpoints documentados vía Swagger UI.
 Desde el navegador se comprobó que el servicio estaba accesible y funcionando correctamente durante la ejecución del Sprint Review.
+
+<img src="assets/docker-ejecucion.PNG"> <br><br>
 
 #### 5.2.2.5. Microservices Documentation Evidence for Sprint Review
 
