@@ -3541,6 +3541,115 @@ Para el presente sprint se ha desarrollado la landing page. Para el despliegue s
 
 Durante el Sprint 2 se seleccionó el desarrollo del microservicio de Pagos como incremento. Este microservicio permite gestionar las transacciones financieras dentro de la plataforma AutoMatch, validando montos, fechas y estados de pago. El objetivo del Sprint fue implementar los endpoints REST, su documentación, pruebas básicas y levantar el servicio correctamente en contenedores Docker.
 
+<table style="width:100%; border-collapse:collapse; font-family:Arial, Helvetica, sans-serif; font-size:14px;">
+  <caption style="caption-side: top; font-weight:700; padding:8px 0;">
+    5.2.2.1 Sprint Backlog 2 (AutoMatch)
+  </caption>
+  <thead>
+    <tr>
+      <th style="border:1px solid #333; padding:8px;"></th>
+      <th style="border:1px solid #333; padding:8px;">Sprint #</th>
+      <th style="border:1px solid #333; padding:8px;"></th>
+      <th style="border:1px solid #333; padding:8px;"></th>
+      <th style="border:1px solid #333; padding:8px;">Sprint 2</th>
+      <th style="border:1px solid #333; padding:8px;"></th>
+      <th style="border:1px solid #333; padding:8px;"></th>
+      <th style="border:1px solid #333; padding:8px;"></th>
+    </tr>
+    <tr>
+      <th style="border:1px solid #333; padding:8px;">User Story</th>
+      <th style="border:1px solid #333; padding:8px;"></th>
+      <th style="border:1px solid #333; padding:8px;">Work Item/Task</th>
+      <th style="border:1px solid #333; padding:8px;"></th>
+      <th style="border:1px solid #333; padding:8px;"></th>
+      <th style="border:1px solid #333; padding:8px;"></th>
+      <th style="border:1px solid #333; padding:8px;"></th>
+      <th style="border:1px solid #333; padding:8px;"></th>
+    </tr>
+    <tr>
+      <th style="border:1px solid #333; padding:8px;">Id</th>
+      <th style="border:1px solid #333; padding:8px;">Title</th>
+      <th style="border:1px solid #333; padding:8px;">Id</th>
+      <th style="border:1px solid #333; padding:8px;">Title</th>
+      <th style="border:1px solid #333; padding:8px;">Description</th>
+      <th style="border:1px solid #333; padding:8px;">Estimation (Hours)</th>
+      <th style="border:1px solid #333; padding:8px;">Assigned To</th>
+      <th style="border:1px solid #333; padding:8px;">Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border:1px solid #333; padding:8px;">HU-021</td>
+      <td style="border:1px solid #333; padding:8px;">Registrar Pago</td>
+      <td style="border:1px solid #333; padding:8px;">TW-11</td>
+      <td style="border:1px solid #333; padding:8px;">Implementar endpoint POST /payments</td>
+      <td style="border:1px solid #333; padding:8px;">Desarrollo del endpoint para crear transacciones de pagos y persistencia en BD.</td>
+      <td style="border:1px solid #333; padding:8px; text-align:center;">6</td>
+      <td style="border:1px solid #333; padding:8px;">Daniel Chávarri</td>
+      <td style="border:1px solid #333; padding:8px;">Done</td>
+    </tr>
+    <tr>
+      <td style="border:1px solid #333; padding:8px;">HU-021</td>
+      <td style="border:1px solid #333; padding:8px;">Registrar Pago</td>
+      <td style="border:1px solid #333; padding:8px;">TW-12</td>
+      <td style="border:1px solid #333; padding:8px;">Validar Request Body del pago</td>
+      <td style="border:1px solid #333; padding:8px;">Aplicar validaciones a nivel DTO para garantizar integridad de datos.</td>
+      <td style="border:1px solid #333; padding:8px; text-align:center;">3</td>
+      <td style="border:1px solid #333; padding:8px;">Daniel Chávarri</td>
+      <td style="border:1px solid #333; padding:8px;">Done</td>
+    </tr>
+    <tr>
+      <td style="border:1px solid #333; padding:8px;">HU-022</td>
+      <td style="border:1px solid #333; padding:8px;">Reembolso de Pago</td>
+      <td style="border:1px solid #333; padding:8px;">TW-13</td>
+      <td style="border:1px solid #333; padding:8px;">Implementar endpoint POST /payments/refund</td>
+      <td style="border:1px solid #333; padding:8px;">Desarrollo del endpoint que genera solicitudes de reembolso asociadas a pagos registrados.</td>
+      <td style="border:1px solid #333; padding:8px; text-align:center;">5</td>
+      <td style="border:1px solid #333; padding:8px;">Nicolas Vera</td>
+      <td style="border:1px solid #333; padding:8px;">Done</td>
+    </tr>
+    <tr>
+      <td style="border:1px solid #333; padding:8px;">HU-023</td>
+      <td style="border:1px solid #333; padding:8px;">Consultar Pago por RequestId</td>
+      <td style="border:1px solid #333; padding:8px;">TW-14</td>
+      <td style="border:1px solid #333; padding:8px;">Implementar GET /payments/request/{requestId}</td>
+      <td style="border:1px solid #333; padding:8px;">Consulta por ID de solicitud para integración entre servicios internos.</td>
+      <td style="border:1px solid #333; padding:8px; text-align:center;">4</td>
+      <td style="border:1px solid #333; padding:8px;">Eduardo Sihuar</td>
+      <td style="border:1px solid #333; padding:8px;">Done</td>
+    </tr>
+    <tr>
+      <td style="border:1px solid #333; padding:8px;">HU-024</td>
+      <td style="border:1px solid #333; padding:8px;">Consultar Pago por OrderId</td>
+      <td style="border:1px solid #333; padding:8px;">TW-15</td>
+      <td style="border:1px solid #333; padding:8px;">Implementar GET /payments/order/{orderId}</td>
+      <td style="border:1px solid #333; padding:8px;">Consulta de pagos asociados a una orden específica.</td>
+      <td style="border:1px solid #333; padding:8px; text-align:center;">4</td>
+      <td style="border:1px solid #333; padding:8px;">Daniel Chávarri</td>
+      <td style="border:1px solid #333; padding:8px;">Done</td>
+    </tr>
+    <tr>
+      <td style="border:1px solid #333; padding:8px;">HU-025</td>
+      <td style="border:1px solid #333; padding:8px;">Despliegue Docker MS Payments</td>
+      <td style="border:1px solid #333; padding:8px;">TW-16</td>
+      <td style="border:1px solid #333; padding:8px;">Configurar Docker Compose para Payments</td>
+      <td style="border:1px solid #333; padding:8px;">Integración de Payment Service y PostgreSQL en contenedores.</td>
+      <td style="border:1px solid #333; padding:8px; text-align:center;">5</td>
+      <td style="border:1px solid #333; padding:8px;">Daniel Chávarri</td>
+      <td style="border:1px solid #333; padding:8px;">Done</td>
+    </tr>
+    <tr>
+      <td style="border:1px solid #333; padding:8px;">HU-026</td>
+      <td style="border:1px solid #333; padding:8px;">Documentación de API Payments</td>
+      <td style="border:1px solid #333; padding:8px;">TW-17</td>
+      <td style="border:1px solid #333; padding:8px;">Documentar API en Swagger</td>
+      <td style="border:1px solid #333; padding:8px;">Exponer endpoints en Swagger UI para integración y testing.</td>
+      <td style="border:1px solid #333; padding:8px; text-align:center;">3</td>
+      <td style="border:1px solid #333; padding:8px;">Nicolas Vera</td>
+      <td style="border:1px solid #333; padding:8px;">Done</td>
+    </tr>
+  </tbody>
+</table> <br> <br>
 
 #### 5.2.2.2. Development Evidence for Sprint Review
 
@@ -3584,6 +3693,51 @@ La colaboración se centró en mantener consistencia de arquitectura, definir co
 
 El tablero Kanban fue actualizado con el estado real de las tareas del Sprint 2, reflejando el flujo “To Do → In Progress → Done”.
 Al finalizar el Sprint, las historias relacionadas al microservicio de pagos se encontraban en Done, evidenciando que el incremento quedó terminado y funcionando en producción técnica.
+
+<table border="1" cellspacing="0" cellpadding="6" style="border-collapse:collapse; width:100%; text-align:left;">
+  <thead style="background-color:#f2f2f2;">
+    <tr>
+      <th style="width:20%;">Estado</th>
+      <th>Tarea</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>To Do</strong></td>
+      <td>
+        – Definir estructura de entidades y DTOs para pagos.
+        – Identificar endpoints CRUD mínimos para transacciones.
+        – Diseñar flujo principal de registro y consulta de pagos.
+        – Revisar dependencias y librerías requeridas para Payment-API.
+      </td>
+    </tr>
+    <tr>
+      <td><strong>In Progress</strong></td>
+      <td>
+        – Implementación del endpoint POST para registrar pagos (HU-021).
+        – Implementación del endpoint POST para reembolsos (HU-022).
+        – Implementación de GET para consultas por RequestId y OrderId (HU-023 / HU-024).
+      </td>
+    </tr>
+    <tr>
+      <td><strong>Testing</strong></td>
+      <td>
+        – Validación de endpoints funcionales mediante Swagger UI.
+        – Validación de persistencia en PostgreSQL desplegado vía Docker Compose.
+        – Pruebas manuales sobre flujo de registro y reembolso de pagos.
+      </td>
+    </tr>
+    <tr>
+      <td><strong>Done</strong></td>
+      <td>
+        – Desarrollo completo del microservicio de Pagos (Payments Service).
+        – Documentación automática de endpoints con Swagger.
+        – Despliegue en contenedores Docker (payments + PostgreSQL).
+        – Sprint Backlog 2 completado al 100%.
+      </td>
+    </tr>
+  </tbody>
+</table>
 
 ## VII. Bibliografía
 
