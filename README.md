@@ -3680,6 +3680,8 @@ Desde el navegador se comprobó que el servicio estaba accesible y funcionando c
 La documentación del microservicio se generó automáticamente mediante Swagger.
 En Swagger UI se visualizan sus endpoints REST con los respectivos métodos HTTP, parámetros, modelos de datos y códigos de respuesta. Esto facilita la comprensión y consumo del microservicio por parte de otros equipos y servicios de la plataforma AutoMatch.
 
+<img src="assets/endpoints-payments.PNG"> <br><br>
+
 #### 5.2.2.6. Software Deployment Evidence for Sprint Review
 
 El despliegue del microservicio se realizó utilizando Docker Compose, levantando tanto el servicio de pagos como su base de datos asociada. Esto permitió verificar que el deployment no dependa del entorno local, sino que sea portable y reproducible en cualquier máquina del equipo de desarrollo. El despliegue se ejecutó de manera exitosa.
