@@ -3536,6 +3536,49 @@ Para el presente sprint se ha desarrollado la landing page. Para el despliegue s
   </tbody>
 </table>
 
+### 5.2.2. Sprint 2
+#### 5.2.2.1. Spring Backglog 2
+
+Durante el Sprint 2 se seleccionó el desarrollo del microservicio de Pagos como incremento. Este microservicio permite gestionar las transacciones financieras dentro de la plataforma AutoMatch, validando montos, fechas y estados de pago. El objetivo del Sprint fue implementar los endpoints REST, su documentación, pruebas básicas y levantar el servicio correctamente en contenedores Docker.
+
+
+#### 5.2.2.2. Development Evidence for Sprint Review
+
+Se implementó el microservicio payments-service en Spring Boot, aplicando Clean Architecture y DDD (application, domain, infrastructure e interfaces).
+Se configuraron los controladores REST, servicios de dominio, repositorios y mapeos correspondientes.
+Las entidades de dominio y DTOs fueron integradas con PostgreSQL.
+El código fue probado localmente y desplegado dentro de un contenedor Docker.
+
+#### 5.2.2.3. Testing Suite Evidence for Sprint Review
+
+Se realizaron pruebas funcionales básicas utilizando Swagger UI, validando el correcto funcionamiento de los endpoints del microservicio.
+Se verificaron: creación de pago, listado de pagos y consulta de pago por ID.
+Las pruebas comprobaron respuesta HTTP 200 y persistencia correcta en base de datos.
+
+#### 5.2.2.4. Execution Evidence for Sprint Review
+
+El microservicio se ejecutó correctamente a través del comando **docker-compose up**.
+El contenedor de pagos se levantó sin errores, conectándose a PostgreSQL y exponiendo sus endpoints documentados vía Swagger UI.
+Desde el navegador se comprobó que el servicio estaba accesible y funcionando correctamente durante la ejecución del Sprint Review.
+
+#### 5.2.2.5. Microservices Documentation Evidence for Sprint Review
+
+La documentación del microservicio se generó automáticamente mediante Swagger.
+En Swagger UI se visualizan sus endpoints REST con los respectivos métodos HTTP, parámetros, modelos de datos y códigos de respuesta. Esto facilita la comprensión y consumo del microservicio por parte de otros equipos y servicios de la plataforma AutoMatch.
+
+#### 5.2.2.6. Software Deployment Evidence for Sprint Review
+
+El despliegue del microservicio se realizó utilizando Docker Compose, levantando tanto el servicio de pagos como su base de datos asociada. Esto permitió verificar que el deployment no dependa del entorno local, sino que sea portable y reproducible en cualquier máquina del equipo de desarrollo. El despliegue se ejecutó de manera exitosa.
+
+#### 5.2.2.7. Team Collaboration Insights during Sprint
+
+Durante el Sprint 2 el equipo reforzó la importancia del desacoplamiento entre microservicios y el valor de mantener documentación actualizada para facilitar la integración continua.
+La colaboración se centró en mantener consistencia de arquitectura, definir correctamente interfaces y apoyar la puesta en marcha conjunta de Swagger y Docker para asegurar trazabilidad y despliegue estable.
+
+#### 5.2.2.8. Kanban Board
+
+El tablero Kanban fue actualizado con el estado real de las tareas del Sprint 2, reflejando el flujo “To Do → In Progress → Done”.
+Al finalizar el Sprint, las historias relacionadas al microservicio de pagos se encontraban en Done, evidenciando que el incremento quedó terminado y funcionando en producción técnica.
 
 ## VII. Bibliografía
 
