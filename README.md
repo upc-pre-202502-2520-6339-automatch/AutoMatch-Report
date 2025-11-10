@@ -3741,6 +3741,221 @@ Al finalizar el Sprint, las historias relacionadas al microservicio de pagos se 
   </tbody>
 </table>
 
+### 5.2.3. Sprint 3
+#### 5.2.3.1. Spring Backglog 3
+
+Durante el Sprint 3 se seleccionó el desarrollo del microservicio de Certificaciones e Inspecciones como incremento. Este microservicio permite registrar resultados técnicos de la inspección de vehículos dentro de AutoMatch, asignando puntajes a componentes críticos como motor, frenos, carrocería, electrónica y suspensión. Con estos valores el sistema calcula automáticamente el puntaje final de la inspección, determinando si el vehículo pasa (PASSED) o falla (FAILED).
+
+El objetivo del Sprint fue:
+
+- Agregar endpoints REST para registro de resultados y cierre de inspección
+- Documentarlos con Swagger
+- Ejecutarlos correctamente en local mediante Docker
+
+<table style="width:100%; border-collapse:collapse; font-family:Arial, Helvetica, sans-serif; font-size:14px;">
+  <caption style="caption-side: top; font-weight:700; padding:8px 0;">
+    5.2.3.1 Sprint Backlog 3 (AutoMatch)
+  </caption>
+ <thead>
+    <tr>
+      <th style="border:1px solid #333; padding:8px;">User Story</th>
+      <th style="border:1px solid #333; padding:8px;">Title</th>
+      <th style="border:1px solid #333; padding:8px;">Work Item/Task</th>
+      <th style="border:1px solid #333; padding:8px;">Title</th>
+      <th style="border:1px solid #333; padding:8px;">Description</th>
+      <th style="border:1px solid #333; padding:8px;">Estimation (Hours)</th>
+      <th style="border:1px solid #333; padding:8px;">Assigned To</th>
+      <th style="border:1px solid #333; padding:8px;">Status</th>
+    </tr>
+</thead>
+<tbody>
+    <tr>
+      <td style="border:1px solid #333; padding:8px;">HU-031</td>
+      <td style="border:1px solid #333; padding:8px;">Registrar resultados técnicos</td>
+      <td style="border:1px solid #333; padding:8px;">TW-21</td>
+      <td style="border:1px solid #333; padding:8px;">POST /api/v1/inspections/{inspectionId}/result</td>
+      <td style="border:1px solid #333; padding:8px;">Registrar puntajes de motor, frenos, carrocería, electrónica y suspensión para una inspección</td>
+      <td style="border:1px solid #333; padding:8px; text-align:center;">6</td>
+      <td style="border:1px solid #333; padding:8px;">Daniel Chávarri</td>
+      <td style="border:1px solid #333; padding:8px;">Done</td>
+    </tr>
+    <tr>
+      <td style="border:1px solid #333; padding:8px;">HU-032</td>
+      <td style="border:1px solid #333; padding:8px;">Cerrar inspección</td>
+      <td style="border:1px solid #333; padding:8px;">TW-22</td>
+      <td style="border:1px solid #333; padding:8px;">Calcular estado final PASSED/FAILED</td>
+      <td style="border:1px solid #333; padding:8px;">Calcular el promedio final y actualizar InspectionStatus a PASSED si >= 3.0, o FAILED si < 3.0</td>
+      <td style="border:1px solid #333; padding:8px; text-align:center;">5</td>
+      <td style="border:1px solid #333; padding:8px;">Daniel Chávarri</td>
+      <td style="border:1px solid #333; padding:8px;">Done</td>
+    </tr>
+    <tr>
+      <td style="border:1px solid #333; padding:8px;">HU-033</td>
+      <td style="border:1px solid #333; padding:8px;">Documentar API Inspections</td>
+      <td style="border:1px solid #333; padding:8px;">TW-23</td>
+      <td style="border:1px solid #333; padding:8px;">Exponer endpoints en Swagger</td>
+      <td style="border:1px solid #333; padding:8px;">Documentar funcionalidad en Swagger UI para validación y testing desde navegador</td>
+      <td style="border:1px solid #333; padding:8px; text-align:center;">3</td>
+      <td style="border:1px solid #333; padding:8px;">Daniel Chávarri</td>
+      <td style="border:1px solid #333; padding:8px;">Done</td>
+    </tr>
+</tbody>
+</table> <br> <br>
+
+#### 5.2.3.2. Development Evidence for Sprint Review
+
+Durante el Sprint 3 se desarrolló la extensión del microservicio Certificación - Inspección de AutoMatch, enfocado en la funcionalidad de registro de resultados técnicos de la inspección de vehículos. Se aplicó arquitectura limpia y estructura por capas (application, domain, infrastructure e interfaces).
+
+Se implementó un endpoint especializado para registrar puntajes por componente técnico del vehículo:
+
+- Motor
+- Frenos
+- Carrocería
+- Electrónica
+- Suspensión
+
+Cada resultado se registra a nivel de inspección existente, y posteriormente se implementó la lógica de cierre automático de la inspección, calculando un promedio final y actualizando el estado usando el enum InspectionStatus. La regla de negocio fue:
+
+- Si el promedio ≥ 3.0 → PASSED
+- Si el promedio < 3.0 → FAILED
+
+Se actualizaron:
+
+- Controllers REST
+- Services de dominio
+- Repositorios
+- DTOs para request y response
+
+Todo el desarrollo se documentó y validó mediante Swagger UI.
+
+#### 5.2.2.3. Testing Suite Evidence for Sprint Review
+
+Se realizaron pruebas funcionales y de integración utilizando Swagger UI para validar el correcto funcionamiento de los endpoints extendidos del microservicio de Certificación e Inspección.
+
+Para este Sprint se centraron las pruebas en:
+
+**Registro de resultados técnicos de inspección**
+- Mediante el endpoint *POST /api/v1/inspections/{inspectionId}/result* se probó el registro de puntajes individuales para motor, frenos, carrocería, electrónica y suspensión, validando respuesta HTTP 200 y persistencia correcta.
+
+**Cierre de inspección con cálculo automático**
+- Se verificó que, al cerrar la inspección, el microservicio calcule el promedio general y actualice correctamente el estado final:
+
+- PASSED si el promedio es mayor o igual a 3.0
+- FAILED si el promedio es menor a 3.0
+
+**Consulta de resultados finales**
+Mediante *GET /api/v1/inspections/{inspectionId}/result* se comprobó que la información almacenada corresponde exactamente a los puntajes enviados y muestra el estado final de la inspección.
+
+Estas pruebas demuestran que el flujo completo **(registrar puntajes → calcular resultado → consultar estado)** se encuentra funcionando correctamente dentro del microservicio, validando la funcionalidad entregada en este Sprint.
+
+#### 5.2.2.4. Execution Evidence for Sprint Review
+
+El microservicio de Certificaciones e Inspecciones fue ejecutado correctamente utilizando Docker Compose, levantándose la aplicación y su base de datos asociada. Posteriormente, el servicio fue validado mediante su documentación expuesta automáticamente en Swagger UI.
+
+Desde Swagger se verificó:
+
+- Registro de puntajes técnicos para una inspección de vehículo.
+- Cálculo del resultado final de la inspección **(PASSED / FAILED)** aplicando las reglas establecidas.
+- Visualización de los resultados de la inspección directamente desde los endpoints REST expuestos.
+
+En las siguientes capturas se muestra el servicio corriendo y disponible en el navegador, evidenciando que los endpoints del microservicio se encuentran operativos y accesibles durante la revisión del Sprint:
+
+<br>
+
+Swagger UI corriendo y exposición de endpoints del microservicio:
+
+<br>
+
+Detalle de los métodos REST del controlador de Certificaciones e Inspecciones:
+
+<br>
+
+Estas evidencias demuestran que la funcionalidad desarrollada en este Sprint fue ejecutada correctamente, integrada en Docker, y validada interactuando desde Swagger UI.
+
+#### 5.2.2.5. Microservices Documentation Evidence for Sprint Review
+
+La documentación del microservicio de Certificaciones e Inspecciones se generó automáticamente mediante Swagger UI, permitiendo visualizar los endpoints expuestos y los modelos de datos involucrados en la creación, registro de puntajes y cierre de inspecciones.
+
+Swagger describe claramente los métodos REST disponibles, los parámetros requeridos y los tipos de datos utilizados, facilitando la comprensión del flujo de negocio para otros equipos y microservicios dentro de AutoMatch. Los endpoints permiten:
+
+**Crear inspecciones**
+
+- Registrar resultados técnicos **(motor, frenos, carrocería, electrónica, suspensión)**
+- Cerrar inspección realizando el cálculo automático del puntaje final y cambio de estado
+- Consultar los resultados finales de inspección
+
+Gracias a esta documentación interactiva, cualquier desarrollador o tester puede ejecutar validaciones manuales sin necesidad de herramientas externas, consumiendo directamente cada uno de los endpoints expuestos en el microservicio. <br>
+
+#### 5.2.2.6. Software Deployment Evidence for Sprint Review
+
+El despliegue del microservicio de Certificaciones e Inspecciones se realizó utilizando Docker Compose, levantando la aplicación en contenedor junto con su entorno de ejecución. Esto permitió validar que el servicio es portable, independiente del entorno local del desarrollador y reproducible por cualquier miembro del equipo.
+
+**El despliegue se ejecutó correctamente mediante el comando:**
+
+**docker-compose up --build**
+
+Al ejecutarlo, el contenedor del microservicio se inició sin errores y el servicio expuso sus endpoints REST para consumo desde Swagger UI. La conexión con la base de datos se realizó de manera satisfactoria, permitiendo registrar y consultar resultados de inspecciones sin inconvenientes.
+
+Este resultado demuestra que el servicio se encuentra listo para ser integrado con otros microservicios dentro del ecosistema de AutoMatch, cumpliendo los criterios de despliegue establecidos para el Sprint 3. <br>
+
+**Evidencia de ejecución del microservicio bajo Docker Compose:**
+
+#### 5.2.2.7. Team Collaboration Insights during Sprint
+
+Durante el Sprint 3 el equipo reforzó la importancia de definir claramente la lógica de negocio en el dominio antes de implementar los endpoints. Gracias a esto se logró un consenso respecto a qué componentes técnicos del vehículo se calificarían y cuál sería el criterio objetivo para validar si una inspección se considera aprobada o rechazada.
+
+Se evidenció además el valor de la documentación temprana en Swagger, ya que permitió validar rápidamente el diseño de los endpoints y facilitó las pruebas manuales desde el navegador sin necesidad de herramientas adicionales.
+
+Finalmente, se confirmó la utilidad de tener integración continua mediante Docker, ya que el equipo pudo levantar el microservicio en diferentes máquinas sin problemas de configuración, garantizando portabilidad, repetibilidad y consistencia en todo el proceso de ejecución durante el Sprint Review.
+
+#### 5.2.2.8. Kanban Board
+
+El tablero Kanban fue actualizado con el estado real de las tareas del Sprint 3, reflejando el flujo “To Do → In Progress → Testing → Done”.
+Al finalizar el Sprint, las historias relacionadas al microservicio de Certificaciones e Inspecciones se encontraron en Done, evidenciando que el incremento quedó terminado, testeado y funcionando correctamente en su despliegue bajo Docker.
+
+<table border="1" cellspacing="0" cellpadding="6" style="border-collapse:collapse; width:100%; text-align:left;">
+  <thead style="background-color:#f2f2f2;">
+    <tr>
+      <th style="width:20%;">Estado</th>
+      <th>Tarea</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>To Do</strong></td>
+      <td>
+        – Definir componentes técnicos a evaluar (motor, frenos, carrocería, electrónica, suspensión).<br>
+        – Diseñar DTO para registro de resultados.<br>
+        – Identificar endpoints necesarios para registrar y cerrar inspección.
+      </td>
+    </tr>
+    <tr>
+      <td><strong>In Progress</strong></td>
+      <td>
+        – Implementación del endpoint POST para registrar resultados técnicos (HU-031).<br>
+        – Implementación del cálculo automático de resultado final PASSED / FAILED (HU-032).
+      </td>
+    </tr>
+    <tr>
+      <td><strong>Testing</strong></td>
+      <td>
+        – Validación de endpoints mediante Swagger UI.<br>
+        – Verificación de reglas de negocio de puntaje y cambio de estado.<br>
+        – Pruebas de ejecución con Docker Compose.
+      </td>
+    </tr>
+    <tr>
+      <td><strong>Done</strong></td>
+      <td>
+        – Microservicio de Certificaciones e Inspecciones extendido correctamente.<br>
+        – Endpoints documentados automáticamente con Swagger UI.<br>
+        – Despliegue y ejecución exitosos utilizando Docker Compose.<br>
+        – Sprint Backlog 3 completado al 100%.
+      </td>
+    </tr>
+  </tbody>
+</table> <br>
+
 ## VII. Bibliografía
 
 - Dittrich, J. (s.f.). A Beginner's Guide to Finding User Needs. Recuperado de
