@@ -3858,17 +3858,20 @@ Desde Swagger se verificó:
 - Cálculo del resultado final de la inspección **(PASSED / FAILED)** aplicando las reglas establecidas.
 - Visualización de los resultados de la inspección directamente desde los endpoints REST expuestos.
 
-En las siguientes capturas se muestra el servicio corriendo y disponible en el navegador, evidenciando que los endpoints del microservicio se encuentran operativos y accesibles durante la revisión del Sprint:
+En las siguientes capturas se muestra el servicio corriendo y disponible en el navegador, evidenciando que los endpoints del microservicio se encuentran operativos y accesibles durante la revisión del Sprint: <br>
 
-<br>
+**Swagger UI corriendo y exposición de endpoints del microservicio:** <br>
 
-Swagger UI corriendo y exposición de endpoints del microservicio:
+<img src="assets/inspections-swagger.PNG"> <br><br>
 
-<br>
+**Detalle de los métodos REST del controlador de Certificaciones e Inspecciones:** <br>
 
-Detalle de los métodos REST del controlador de Certificaciones e Inspecciones:
-
-<br>
+<img src="assets/inspection-controller.PNG"> <br><br>
+<img src="assets/inspections-schedule.PNG"> <br><br>
+<img src="assets/inspections-results.PNG"> <br><br>
+<img src="assets/certification-controller.PNG"> <br><br>
+<img src="assets/certification-revoke.PNG"> <br><br>
+<img src="assets/kafka-controller.PNG"> <br><br>
 
 Estas evidencias demuestran que la funcionalidad desarrollada en este Sprint fue ejecutada correctamente, integrada en Docker, y validada interactuando desde Swagger UI.
 
@@ -3897,6 +3900,9 @@ El despliegue del microservicio de Certificaciones e Inspecciones se realizó ut
 Al ejecutarlo, el contenedor del microservicio se inició sin errores y el servicio expuso sus endpoints REST para consumo desde Swagger UI. La conexión con la base de datos se realizó de manera satisfactoria, permitiendo registrar y consultar resultados de inspecciones sin inconvenientes.
 
 Este resultado demuestra que el servicio se encuentra listo para ser integrado con otros microservicios dentro del ecosistema de AutoMatch, cumpliendo los criterios de despliegue establecidos para el Sprint 3. <br>
+
+<img src="assets/docker-ejecucion.PNG"> <br><br>
+<img src="assets/docker-ejecucion2.PNG"> <br><br>
 
 **Evidencia de ejecución del microservicio bajo Docker Compose:**
 
