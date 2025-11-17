@@ -1985,6 +1985,11 @@ Las tácticas arquitectónicas se han redefinido de acuerdo con la implementaci�
     <th>Objetivo de Calidad</th>
     <th>Aplicación en AutoMatch</th>
   </tr>
+<tr>
+    <td>Confiabilidad</td>
+    <td>Garantizar la confianza de los Usuarios en el sistema</td>
+    <td>Uso de servicios externos confiables y aplicación de procesos de compra seguros para asegurar respuestas consistentes y reducir fallos en las operaciones.</td>
+  </tr>
   <tr>
     <td>Disponibilidad</td>
     <td>Garantizar operación continua del sistema y mínima interrupción del servicio</td>
@@ -2094,7 +2099,7 @@ Estos escenarios reflejan cómo los componentes de AutoMatch (API Gateway, IAM, 
     <td>Alta concurrencia</td> <td>Servicio de Vehículos / Gateway</td> 
     <td>Responde en menos de 2 segundos</td> 
     <td>Tiempos de respuesta &lt; 2000ms</td> 
-</tr> 
+
 <tr> <td>Seguridad</td> 
 <td>IAM Service</td> 
 <td>Valida tokens JWT y permisos</td> 
@@ -2465,7 +2470,11 @@ Este apartado define los conceptos de diseño o patrones arquitectónicos que pe
         <li><b>API Gateway Pattern:</b> Centralizar peticiones y aplicar políticas de seguridad.</li>
         <li><b>JWT (JSON Web Token):</b> Asegurar sesiones de usuario sin sobrecargar la base de datos.</li>
         <li><b>Repository Pattern:</b> Desacoplar el acceso a datos de usuarios para mayor mantenibilidad.</li>
-      </ul>
+        <li><b>Circuit Breaker Pattern:</b> Evita que fallos en servicios de terceros (pagos, identidad, mensajería) afecten al sistema completo.</li>
+        <li><b>Event-Driven Architecture:</b> Comunicación asíncrona entre microservicios (publicar/escuchar eventos como “auto publicado”, “compra realizada”).</li>
+         <li><b>Database per Microservice:</b> Cada microservicio (Autos, Usuarios, Pagos) mantiene su propia base para mayor independencia.</li>
+        <li><b>Domain-Driven Design (DDD):</b> Separar dominios como Inventario de Autos, Gestión de Usuarios, Pagos, Notificaciones.</li>
+</ul>
     </td>
   </tr>
 </table> <br><br>
