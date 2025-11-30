@@ -1,43 +1,39 @@
+<br><br>
 <!-- # <center>COURSE PROJECT</center> -->
 
-<p align="center">
+<p align="center" style="font-size: 23px"; >
 <br>
     <img src="https://upload.wikimedia.org/wikipedia/commons/f/fc/UPC_logo_transparente.png" width="30%" alt="UPC Logo"><br>
 <br>
-    <strong>UPC - Universidad Peruana de Ciencias Aplicadas</strong><br>
-    <strong>Carrera de Ingeniería de Software</strong><br>
+    <strong>Universidad Peruana de Ciencias Aplicadas</strong><br>
+    <br>
+    <strong> Ingeniería de Software</strong><br>
+<br><br>
+    <strong>1ASI0657 Fundamentos de Arquitectura de Software </strong><br>  
+   <Strong>202520</strong> 
 <br>
-    <strong>Fundamentos de Arquitectura de Software</strong><br>  
-    <strong>2025-20</strong><br>  
+</p>
+
 <br>
+<p align="center" style="font-size: 19px">
+    <strong>NRC: 6339 </strong><br>
+    <br>
+    <strong>Docente:</strong>Ernesto Ocampo Tello
 </p>
 
-<p align="center">
-    <strong>Sección: 6339 </strong><br>
-    <strong>Docente: Ernesto Ocampo Tello </strong>
+<br>
+<p align="center"style="font-size: 17px">
+    <strong>Informe del Trabajo Final </strong><br>
+    <strong>Nombre del Producto: </strong> AutoMatch
 </p>
-
-
-<p align="center">
-    <strong>Informe TF </strong><br>
-    <strong>Startup: DriveTrust </strong><br>
-    <strong>Producto: AutoMatch </strong>
+<br><br>
+<p align="left" style="font-size: 17px">
+    <strong>integrantes:</strong><br>
+    Chávarri Zarzosa, Daniel Jhared<br>
+    Sihuar Ccotarma Ttito, Eduardo Eusebio <br>
+    Vera Nuñez, Nicolas Alejandro
 </p>
-
-<p align="center">
-    <strong>Team Members:</strong><br>
-    <strong>Chávarri Zarzosa, Daniel Jhared</strong><br>
-    <strong>Sihuar Ccotarma Ttito, Eduardo Eusebio </strong><br>
-    <strong>Vera Nuñez, Nicolas Alejandro</strong>
-</p>
-
-##
-##
-##
-##
-##
-
-
+<br><br><br><br><br><br><br><br><br><br><br>
 
 
 
@@ -132,7 +128,7 @@
 - [VIII. Anexos](#viii-anexos)
 
 <br><br>
-
+<br><br><br>
 ----
 # Student Outcome
 En el siguiente cuadro se describe las acciones realizadas y enunciados de
@@ -1345,7 +1341,7 @@ El proyecto AutoMatch busca consolidarse como una plataforma digital que transfo
 **Enfoque estratégico:**
 Este alcance inicial permitirá a AutoMatch validar su propuesta de valor, construir confianza en la comunidad de usuarios y establecer las bases para crecer hacia la visión de convertirse en la principal plataforma nacional de autos de segunda mano.
 
-## 3.6. Product Backlog
+## 3.5. Product Backlog
 
 En esta sección del Product Backlog se encuentran recopiladas todas las User Stories identificadas para el desarrollo de nuestra plataforma AutoMatch. Cada User Story representa una funcionalidad o requerimiento específico que contribuirá a mejorar la experiencia del usuario y a alcanzar los objetivos del proyecto. Las historias están ordenadas por prioridad, considerando tanto la importancia para los usuarios como la complejidad técnica y el valor de negocio. El Product Backlog será actualizado periódicamente a medida que se avanza en el desarrollo y se obtienen nuevos requerimientos, asegurando que siempre refleje las necesidades actuales del proyecto.
 
@@ -1765,8 +1761,6 @@ El diagrama de componentes de AutoMatch representa la estructura interna del sis
 
 **Certificación e inspección Component**
 <img src="assets/Content Diagram TP Fundamentos-Page-2.svg"> <br><br><br>
-
-
 
 
 ### 4.1.5. Relational/Non Relational Database Diagram 
@@ -3492,7 +3486,7 @@ Para el presente sprint se ha desarrollado la landing page. Para el despliegue s
 
 #### 5.2.4.7. Team Collaboration Insights during Sprint
 
-![TB2](assets/evidencia-tb3.jpg) <br>
+![TB2](assets/evidencia-tb3.png) <br>
 
 #### 5.2.1.8. Kanban Board 
 
@@ -3971,7 +3965,118 @@ Al finalizar el Sprint, las historias relacionadas al microservicio de Certifica
   </tbody>
 </table> <br>
 
-## VII. Bibliografía
+
+### 5.2.4 Sprint 4
+
+#### 5.2.4.1. Sprint Planning 4
+
+
+  | Sprint 4                        | Implementación de la seguridad en el backend e implementación del backend en el frontend.                                                                                         |
+  |---------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+  | Sprint Planning Background      |
+  | Date                            | 21/11/2024                                                                                                                                                            |
+  | Time                            | 00:07 horas (GMT-5)                                                                                                                                                 |
+  | Location                        | Reunión realizada mediante Discord                                                                                                                 |
+  | Prepared By                     |                 Vera Nuñez, Nicolas Alejandro                                            |
+  | Attendees (to planning meeting) | <li>Vera Nuñez, Nicolas Alejandro   </li> <li>Chávarri Zarzosa, Daniel Jhared</li> <li>Sihuar Ccotarma Ttito, Eduardo Eusebio</li> |
+  | Sprint 1 Review              |
+  | Resumen                         | Se creó el repositorio del Back-End                                                                            |
+  | Sprint 2 Retrospective       |
+  | Resumen                         | En este sprint se creo el web application (Frontend)                                         |
+  | Sprint 3 Retrospective       |
+  | Resumen                         | En este sprint el Back-End se esta desarrolando en JAVA y Spring Boot y se realizaron correcciones e integración de seguridad                                         |
+  | **Sprint Goal & User Stories**  |
+  | Sprint 4 Velocity               | 31 points                                                                                                                                                          |
+  | Sum of Story Points             | 31 points                                                                                                                                                                                    |
+</div>
+
+
+#### 5.2.4.2 Development Evidence for Sprint Review
+Video de despliegue: [swagger](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20211c736_upc_edu_pe/IQB2BrOCfPySQI5ewYtxPJGNAf4QSFeWWa-bWCQEep43sAI?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=nBMFkm)
+
+#### 5.2.4.3 Testing Suite Evidence for Sprint Review
+A partir de las historias de usuario, se generaron los acceptance tests para evaluar la forma en la que deben ejecutarse las funcionalidades de nuestra aplicación web para cumplir con los objetivos de nuestros usuarios.
+
+
+
+| Repository	  | Branch	            | Commit Id | Commit Message	                                     | Committed on (Date) |
+|--------------|--------------------|-----------|-----------------------------------------------------|---------------------|
+| upc-pre-202502-2520-6339-automatch/Acceptance-Tests | main | 93468bc | first commit | 27/09/24 |
+| upc-pre-202502-2520-6339-automatch/Acceptance-Tests | main | 3907a7f | feat: add US01.feature | 27/09/24 |
+| upc-pre-202502-2520-6339-automatch/Acceptance-Tests | main | 9b3baad | fix: fix US01 | 27/09/24 |
+| upc-pre-202502-2520-6339-automatch/Acceptance-Tests | main | 32eeaaa | feat: add Acceptances Tests | 27/09/24 |
+
+#### 5.2.4.4 Execution Evidence for Sprint Review
+En esta parte, se muestra la ejecucion de la aplicacion web, tanto del front end como del back end, asi como tambien se muestra el uso de la aplicacion en un servidor de Swagger.
+
+![Swagger](assets/Swagger01.png)
+---
+![Swagger](assets/Swagger02.png)
+---
+![Swagger](assets/Swagger03.jpg)
+---
+![Swagger](assets/Swagger04.jpg)
+
+
+#### 5.2.4.5 Microservices Documentation Evidence for Sprint Review
+En esta seccion, se muestra la documentacion de los servicios del back end de la aplicacion web, asi como tambien se muestra el uso de Swagger para la documentacion de los servicios.
+
+Utilizamos SpringBoot, Spring Security, JWToken y Spring Data jpa:
+
+- [Sprint Boot](https://docs.spring.io/spring-boot/index.html)
+- [Sprint Boot Security](https://docs.spring.io/spring-boot/reference/web/spring-security.html#page-title)
+- [Json Web Token](https://www.npmjs.com/package/jsonwebtoken)
+- [Sprint Data JPA](https://spring.io/projects/spring-data-jpa)
+
+#### 5.2.4.6 Software Deployment Evidence for Sprint Review
+
+Para este ultimo sprint se uso los servicios de Azure para el deploy de nuestro web services.
+
+- Par nuestra Base de datos se uso el recurso de **vitual Machine Server**:
+
+![backend](assets/backendeployment.png)
+
+
+_Link_: [Swagger](http://4.206.128.96:8761)
+
+---
+- Tambien el deploy de nuestro web application se realizo en **vercel**
+
+_Link_: [Automatch](https://frontendautomatch.netlify.app/) 
+
+![deploy](assets/netfly.png)
+
+#### 5.2.4.7 Team Collaboration Insights during Sprint
+
+![TB2](assets/evidencia-tb3.png)
+
+#### 5.2.4.8 Kanban Board
+
+![image](assets/sprint4_trello.png)
+
+
+### 5.3 Microservices Deployment
+
+#### 5.3.1 Cloud Architecture Diagram
+La arquitectura en la nube consiste en una máquina virtual que actúa como servidor central y ejecuta múltiples componentes usando Docker. Todo funciona dentro de un entorno aislado donde los microservicios se organizan y comunican entre sí. Los usuarios acceden por Internet, y la nube se encarga de ofrecer estabilidad, disponibilidad y flexibilidad para que el sistema pueda crecer o actualizarse sin interrumpir su funcionamiento.
+
+![arquitectura cloud](assets/Cloud%20Architecture%20Diagram.png)
+
+#### 5.3.2 Cloud Architecture Deployment (AWS, Microsoft Azure or Google Cloud) 
+La aplicación está desplegada dentro de una máquina virtual en la nube, donde Docker ejecuta varios microservicios que juntos forman el backend del sistema. Los usuarios se conectan desde Internet y llegan a esta VM, que actúa como un servidor central que organiza, comunica y gestiona todos los servicios de forma aislada y eficiente. Así, cada microservicio funciona por separado pero dentro del mismo entorno, permitiendo que el sistema sea más fácil de mantener, actualizar y escalar.
+![arquitectura de deployment](assets/AzureExportedTemplate.png)
+
+## Conclusiones
+### Conclusiones y recomendaciones
+
+- El análisis realizado por el equipo confirmó que la industria de venta de autos enfrenta desafíos importantes relacionados con la seguridad y la confianza en las transacciones. Sin embargo, también identificó oportunidades significativas, reflejadas en un aumento en el número de ventas en los últimos años. En respuesta a esta situación, Automatch ofrece una solución efectiva mediante una plataforma innovadora para la compra y venta de autos usados, respaldada por la garantía de calidad y seguridad proporcionada por centros motrices certificados.
+  <br><br>
+- El diseño de Automatch se desarrolló con el objetivo de ofrecer una experiencia de usuario superior y establecer una clara diferenciación respecto a la competencia. Los estilos seleccionados, junto con una organización cuidadosa de la información, no solo aportan coherencia visual, sino que también facilitan la navegación y el acceso a las funcionalidades más relevantes para los usuarios.
+
+### Video About-The-Team
+  Link: [About-the-Team]()
+
+## VII. Referencias Bibliografía
 
 - Dittrich, J. (s.f.). A Beginner's Guide to Finding User Needs. Recuperado de
   https://jdittrich.github.io/userNeedResearchBook/
@@ -4001,7 +4106,11 @@ Al finalizar el Sprint, las historias relacionadas al microservicio de Certifica
   <br><br>
 * Miro: [Miro](https://miro.com/app/board/uXjVMm70eUI=/)
   <br><br>
+* backend: [back en microservicios](http://4.206.128.96:8761)
 * Organización Github: [Organización](https://github.com/upc-pre-202502-2520-6339-automatch) 
+<br><br>
+
+* frontend: [Automatch](https://frontendautomatch.netlify.app/) 
   <br><br>
 * [Registro de entrevistas](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202219284_upc_edu_pe/EU3ocaW1vF9KhmOYIXX3j44BM3JEIi_35Pc0mA_-rIpoQA?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=b769rK)
   <br><br>
