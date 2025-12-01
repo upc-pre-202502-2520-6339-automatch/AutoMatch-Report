@@ -4042,7 +4042,7 @@ _Link_: [Swagger](http://4.206.128.96:8761)
 ---
 - Tambien el deploy de nuestro web application se realizo en **vercel**
 
-_Link_: [Automatch](https://frontendautomatch.netlify.app/) 
+_Link_: [Automatch](frontend-auto-match-ejscv9ucn.vercel.app/login) 
 
 ![deploy](assets/netfly.png)
 
@@ -4074,7 +4074,7 @@ La aplicación está desplegada dentro de una máquina virtual en la nube, donde
 - El diseño de Automatch se desarrolló con el objetivo de ofrecer una experiencia de usuario superior y establecer una clara diferenciación respecto a la competencia. Los estilos seleccionados, junto con una organización cuidadosa de la información, no solo aportan coherencia visual, sino que también facilitan la navegación y el acceso a las funcionalidades más relevantes para los usuarios.
 
 ### Video About-The-Team
-  Link: [About-the-Team]()
+  Link: [About-the-Team](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20211c736_upc_edu_pe/IQBtZ8L95e6CRbmIM9Ms9BnRASp0WqySrYe3E26ro45CG10?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=I22uzX)
 
 ## VII. Referencias Bibliografía
 
@@ -4107,10 +4107,11 @@ La aplicación está desplegada dentro de una máquina virtual en la nube, donde
 * Miro: [Miro](https://miro.com/app/board/uXjVMm70eUI=/)
   <br><br>
 * backend: [back en microservicios](http://4.206.128.96:8761)
+
 * Organización Github: [Organización](https://github.com/upc-pre-202502-2520-6339-automatch) 
 <br><br>
 
-* frontend: [Automatch](https://frontendautomatch.netlify.app/) 
+* frontend: [Automatch](frontend-auto-match-ejscv9ucn.vercel.app/login) 
   <br><br>
 * [Registro de entrevistas](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202219284_upc_edu_pe/EU3ocaW1vF9KhmOYIXX3j44BM3JEIi_35Pc0mA_-rIpoQA?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=b769rK)
   <br><br>
